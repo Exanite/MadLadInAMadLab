@@ -1,5 +1,5 @@
 set -e
 
-git subrepo clean TurnBasedTacticsGame/Assets/Plugins/Exanite/Building
-git subrepo clean TurnBasedTacticsGame/Assets/Plugins/Exanite/Core
-git subrepo clean TurnBasedTacticsGame/Assets/Plugins/Exanite/Drawing
+git subrepo clean Wargames2024/Assets/Plugins/Exanite/Building
+git subrepo clean Wargames2024/Assets/Plugins/Exanite/Core
+git subrepo clean Wargames2024/Assets/Plugins/Exanite/Drawing

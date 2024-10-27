@@ -1,7 +1,7 @@
 set -e
 
-git subrepo push TurnBasedTacticsGame/Assets/Plugins/Exanite/Building
-git subrepo push TurnBasedTacticsGame/Assets/Plugins/Exanite/Core
-git subrepo push TurnBasedTacticsGame/Assets/Plugins/Exanite/Drawing
+git subrepo push Wargames2024/Assets/Plugins/Exanite/Building
+git subrepo push Wargames2024/Assets/Plugins/Exanite/Core
+git subrepo push Wargames2024/Assets/Plugins/Exanite/Drawing
 
 ./clean-subrepos.sh
