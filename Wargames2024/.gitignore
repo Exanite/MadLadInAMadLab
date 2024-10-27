@@ -6,6 +6,7 @@
 # Jetbrains
 /.idea
 /.run
+*.DotSettings
 
 # VS Code
 .vscode/*
