@@ -1,0 +1,33 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <AssemblyName>Exanite.Core.CS12</AssemblyName>
+    <RootNamespace>Exanite.Core</RootNamespace>
+    <OutputPath>bin\$(MSBuildProjectName)\$(Configuration)</OutputPath>
+
+    <!-- For code incompatible with Unity -->
+    <TargetFrameworks>netstandard2.1;net8.0</TargetFrameworks>
+    <LangVersion>12</LangVersion>
+    <Nullable>enable</Nullable>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+
+    <AnalysisLevel>latest</AnalysisLevel>
+    <EnableNETAnalyzers>true</EnableNETAnalyzers>
+    <EnableTrimAnalzyer>true</EnableTrimAnalzyer>
+    <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+
+    <!-- Disable nullability of reference types mismatch in netstandard2.1 -->
+    <NoWarn Condition="$(TargetFramework) == 'netstandard2.1'">$(NoWarn);CS8767</NoWarn>
+  </PropertyGroup>
+
+  <!-- Exclude files that only compile in Unity -->
+  <PropertyGroup>
+    <DefaultItemExcludes>
+      $(DefaultItemExcludes);
+      **/*.meta;
+      Components/**/*;
+      Editor/**/*;
+      Tracking/**/*;
+      Tests/**/*;
+    </DefaultItemExcludes>
+  </PropertyGroup>
+</Project>
