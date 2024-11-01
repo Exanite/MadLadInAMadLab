@@ -1,5 +1,19 @@
 {
   "dependencies": {
+    "com.cysharp.unitask": {
+      "version": "https://github.com/Cysharp/UniTask.git?path=src/UniTask/Assets/Plugins/UniTask",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "f9fd769be7c634610f2a61aa914a1a55f34740e1"
+    },
+    "com.nomnom.asset-tabs": {
+      "version": "https://github.com/nomnomab/unity-asset-tabs.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "b6a9b13111b8fd6ed14ceccf09d837409a9cce28"
+    },
     "com.unity.2d.common": {
       "version": "8.0.4",
       "depth": 1,
