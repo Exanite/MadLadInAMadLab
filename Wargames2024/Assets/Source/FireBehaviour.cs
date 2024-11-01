@@ -7,10 +7,8 @@ public class FireBehaviour : MonoBehaviour
     // Ignite: Sets things the fire touches on fire, if it is not already on fire
     // Burn: Damages things that are nearby, if they are burnable
 
-    public FireBehaviour FirePrefab;
-
     public float DamagePerSecond = 10;
-    public float Duration = 10;
+    public float Duration = 5;
 
     [Space]
     public float MinSpreadRange = 2;
@@ -22,11 +20,13 @@ public class FireBehaviour : MonoBehaviour
     public float SpreadCheckRadius = 0.5f;
 
     [Space]
-    public float MinSpreadTime = 3;
-    public float MaxSpreadTime = 9;
+    public float MinSpreadTime = 1;
+    public float MaxSpreadTime = 5;
 
     private float spreadTimer;
     private float nextSpreadTime;
+
+    private float timeAlive;
 
     private void Start()
     {
@@ -40,6 +40,14 @@ public class FireBehaviour : MonoBehaviour
         {
             TrySpread();
             UpdateSpreadTime();
+
+            spreadTimer = 0;
+        }
+
+        timeAlive += Time.deltaTime;
+        if (timeAlive > Duration)
+        {
+            Destroy(gameObject);
         }
     }
 
@@ -48,14 +56,16 @@ public class FireBehaviour : MonoBehaviour
         for (var i = 0; i < SpreadTryCount; i++)
         {
             var spreadRange = Random.Range(MinSpreadRange, MaxSpreadRange);
-            var spreadPosition = Random.insideUnitCircle.normalized * spreadRange;
+            var spreadPosition = transform.position + (Vector3)(Random.insideUnitCircle.normalized * spreadRange);
 
             if (Physics2D.OverlapCircle(spreadPosition, SpreadCheckRadius))
             {
                 continue;
             }
 
-            Instantiate(FirePrefab, spreadPosition, Quaternion.identity);
+            Instantiate(GameContext.Instance.FirePrefab, spreadPosition, Quaternion.identity);
+
+            break;
         }
     }
 

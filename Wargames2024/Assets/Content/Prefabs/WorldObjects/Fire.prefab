@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6482745389429935559}
   - component: {fileID: 7568818954508854151}
   - component: {fileID: 4273630159239241065}
+  - component: {fileID: 2426616383781921718}
   m_Layer: 0
   m_Name: Fire
   m_TagString: Untagged
@@ -74,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: -2413806693520163455, guid: 4adeaf2d2b1c7417e89f026626d8264f, type: 3}
   m_Color: {r: 1, g: 0.6617094, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -100,10 +101,45 @@ MonoBehaviour:
   FirePrefab: {fileID: 4273630159239241065}
   DamagePerSecond: 10
   Duration: 10
-  MinSpreadRange: 2
-  MaxSpreadRange: 4
+  MinSpreadRange: 0.5
+  MaxSpreadRange: 2
   SpreadTryCount: 3
   SpreadProbability: 0.5
   SpreadCheckRadius: 0.5
-  MinSpreadTime: 3
-  MaxSpreadTime: 9
+  MinSpreadTime: 1
+  MaxSpreadTime: 3
+--- !u!58 &2426616383781921718
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9192003976726042258}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.35
