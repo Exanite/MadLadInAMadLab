@@ -125,13 +125,14 @@ NavMeshSettings:
 --- !u!1 &6920045
 GameObject:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 9192003976726042258, guid: e004498a5fa367144b76f3df1e0b4312, type: 3}
+  m_PrefabInstance: {fileID: 2900629586281366369}
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6920047}
   - component: {fileID: 6920046}
+  - component: {fileID: 6920048}
   m_Layer: 0
   m_Name: Fire
   m_TagString: Untagged
@@ -142,8 +143,8 @@ GameObject:
 --- !u!212 &6920046
 SpriteRenderer:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 7568818954508854151, guid: e004498a5fa367144b76f3df1e0b4312, type: 3}
+  m_PrefabInstance: {fileID: 2900629586281366369}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6920045}
   m_Enabled: 1
@@ -181,7 +182,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.6617094, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -194,8 +195,8 @@ SpriteRenderer:
 --- !u!4 &6920047
 Transform:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 6482745389429935559, guid: e004498a5fa367144b76f3df1e0b4312, type: 3}
+  m_PrefabInstance: {fileID: 2900629586281366369}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6920045}
   serializedVersion: 2
@@ -206,6 +207,28 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6920048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 4273630159239241065, guid: e004498a5fa367144b76f3df1e0b4312, type: 3}
+  m_PrefabInstance: {fileID: 2900629586281366369}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6920045}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1ee57f1bb754071811df26cba8b3902, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FirePrefab: {fileID: 6920048}
+  DamagePerSecond: 10
+  Duration: 10
+  MinSpreadRange: 2
+  MaxSpreadRange: 4
+  SpreadTryCount: 3
+  SpreadProbability: 0.5
+  SpreadCheckRadius: 0.5
+  MinSpreadTime: 3
+  MaxSpreadTime: 9
 --- !u!1 &23585100
 GameObject:
   m_ObjectHideFlags: 0
@@ -298,9 +321,66 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &2900629586281366369
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6482745389429935559, guid: e004498a5fa367144b76f3df1e0b4312, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6482745389429935559, guid: e004498a5fa367144b76f3df1e0b4312, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6482745389429935559, guid: e004498a5fa367144b76f3df1e0b4312, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6482745389429935559, guid: e004498a5fa367144b76f3df1e0b4312, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6482745389429935559, guid: e004498a5fa367144b76f3df1e0b4312, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6482745389429935559, guid: e004498a5fa367144b76f3df1e0b4312, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6482745389429935559, guid: e004498a5fa367144b76f3df1e0b4312, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6482745389429935559, guid: e004498a5fa367144b76f3df1e0b4312, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6482745389429935559, guid: e004498a5fa367144b76f3df1e0b4312, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6482745389429935559, guid: e004498a5fa367144b76f3df1e0b4312, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9192003976726042258, guid: e004498a5fa367144b76f3df1e0b4312, type: 3}
+      propertyPath: m_Name
+      value: Fire
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e004498a5fa367144b76f3df1e0b4312, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 23585103}
-  - {fileID: 6920047}
+  - {fileID: 2900629586281366369}
