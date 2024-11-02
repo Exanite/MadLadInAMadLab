@@ -174,3 +174,5 @@ MonoBehaviour:
   Health: 5000
   MaxHealth: 5000
   RegenPerSecond: 0
+  DestroyOnDeath:
+  - {fileID: 5413686579382620190}

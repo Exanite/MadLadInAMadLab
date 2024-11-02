@@ -15,7 +15,7 @@ public class Door : MonoBehaviour
 
     private void Update()
     {
-        shouldOpen = Network.IsOn;
+        shouldOpen = Network.IsFullyOn;
 
         timer += Time.deltaTime * speed * (shouldOpen ? 1 : -1);
         timer = Mathf.Clamp(timer, 0, 1);
