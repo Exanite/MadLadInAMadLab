@@ -4930,12 +4930,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1ee57f1bb754071811df26cba8b3902, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DamagePerSecond: 50
+  DamagePerSecond: 10
   Duration: 10
   MinSpreadRange: 0.5
   MaxSpreadRange: 2
   SpreadTryCount: 3
-  SpreadProbability: 0.5
   SpreadCheckRadius: 0.5
   BurnRadius: 0.5
   MinSpreadTime: 1

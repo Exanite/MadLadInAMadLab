@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee3d2f208cf54a0e9b7e5a927933bfc0, type: 3}
+  m_Name: GasBarrel
+  m_EditorClassIdentifier: 
+  Sprites:
+  - {fileID: -426645652, guid: 6b5b56953dcd60744b3b6bd11bab89c3, type: 3}
+  - {fileID: 2146791278, guid: 6b5b56953dcd60744b3b6bd11bab89c3, type: 3}
+  - {fileID: -487472437, guid: 6b5b56953dcd60744b3b6bd11bab89c3, type: 3}
+  - {fileID: -249679479, guid: 6b5b56953dcd60744b3b6bd11bab89c3, type: 3}
+  - {fileID: -643500943, guid: 6b5b56953dcd60744b3b6bd11bab89c3, type: 3}
+  - {fileID: 897623861, guid: 6b5b56953dcd60744b3b6bd11bab89c3, type: 3}
+  - {fileID: 2058314831, guid: 6b5b56953dcd60744b3b6bd11bab89c3, type: 3}
+  - {fileID: 261872906, guid: 6b5b56953dcd60744b3b6bd11bab89c3, type: 3}
+  - {fileID: 606343470, guid: 6b5b56953dcd60744b3b6bd11bab89c3, type: 3}
