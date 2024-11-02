@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{678a2e9e-b0ff-4d54-90ad-7a8378be0b95}">
+		<property name="assetPath">
+			<value>explosion_loud_internal_reverberant.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>3.8399999999999999</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{8d396bfc-f017-401d-9356-26c8a0e09c31}</destination>
+		</relationship>
+	</object>
+</objects>
