@@ -117,10 +117,16 @@ MonoBehaviour:
   MovementInput: {fileID: -7857667062164034563, guid: 467cb74b20c92f74890a57ce5a31574f, type: 3}
   Rigidbody: {fileID: 6406784594578133735}
   Health: {fileID: 3858286251893545890}
-  sprite: {fileID: 6936585397846177126}
+  Sprite: {fileID: 6936585397846177126}
+  Animation:
+  - {fileID: 712239745, guid: 95d349f36eb08d54fb84459f2be1d055, type: 3}
+  - {fileID: -315847160, guid: 95d349f36eb08d54fb84459f2be1d055, type: 3}
+  - {fileID: -1029502469, guid: 95d349f36eb08d54fb84459f2be1d055, type: 3}
+  SpriteRenderer: {fileID: 6997299849183965488}
   MovementSpeed: 5
   MovementSmoothTime: 0.05
   rotationSpeed: 20
+  animationSpeed: 5
 --- !u!114 &3858286251893545890
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -150,6 +156,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a00807b0402f4f14ac447c07116bd4cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BurningDamageMultiplier: 1
 --- !u!61 &7694989695545658087
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -238,7 +245,7 @@ GameObject:
   - component: {fileID: 6799453988995612255}
   - component: {fileID: 6997299849183965488}
   m_Layer: 0
-  m_Name: Sprite
+  m_Name: PlayerSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -300,7 +307,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1015115202, guid: 5a40a47fd9429a74dae0bc4d72896436, type: 3}
+  m_Sprite: {fileID: 712239745, guid: 95d349f36eb08d54fb84459f2be1d055, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -319,6 +326,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8764196160690883187}
     m_Modifications:
+    - target: {fileID: 1700233852126782937, guid: fbbd1ac3cb1aeab488983b7bb7995ad2, type: 3}
+      propertyPath: m_Lens.OrthographicSize
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 2662563699434820976, guid: fbbd1ac3cb1aeab488983b7bb7995ad2, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

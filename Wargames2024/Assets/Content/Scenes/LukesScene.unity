@@ -1641,6 +1641,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1283738848727409237, guid: 8dbe18a5c45ff8a4b8a8804ee75a595b, type: 3}
+      propertyPath: m_Lens.OrthographicSize
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1945655426592960134, guid: 8dbe18a5c45ff8a4b8a8804ee75a595b, type: 3}
       propertyPath: m_Name
       value: Player
