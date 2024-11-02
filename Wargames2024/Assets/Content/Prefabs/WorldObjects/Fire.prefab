@@ -4947,12 +4947,12 @@ MonoBehaviour:
   Light: {fileID: 2674729318107653009}
   DamagePerSecond: 10
   Duration: 10
-  MinSpreadRange: 0.5
+  MinSpreadRange: 1
   MaxSpreadRange: 2
-  SpreadTryCount: 3
-  SpreadCheckRadius: 0.3
+  SpreadTryCount: 5
+  SpreadCheckRadius: 0.8
   BurnRadius: 1.5
-  MinSpreadTime: 2
+  MinSpreadTime: 3
   MaxSpreadTime: 4
 --- !u!58 &2426616383781921718
 CircleCollider2D:
