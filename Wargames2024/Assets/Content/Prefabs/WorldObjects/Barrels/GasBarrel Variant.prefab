@@ -102,11 +102,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Health: {fileID: 1321938410027746548}
   FragmentPrefab: {fileID: 1528228008349961820, guid: 0a9fb1dbea7165246a139f3ca6382405, type: 3}
-  MinFragments: 8
-  MaxFragments: 16
-  ExplosionDamage: 100
+  MinFragments: 4
+  MaxFragments: 6
+  ExplosionDamage: 20
   ExplosionRadius: 10
-  ExplosionForce: 500
+  ExplosionForce: 300
   ExplosionDuration: 0.05
   TimeBetweenExplosionTicks: 0.01
   ExplosionFalloff:

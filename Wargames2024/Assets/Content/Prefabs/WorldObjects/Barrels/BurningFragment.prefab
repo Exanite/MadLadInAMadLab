@@ -50,7 +50,7 @@ MonoBehaviour:
   Rigidbody: {fileID: 2024953293936103789}
   Fire: {fileID: 7656333225238527745}
   InitialSpeed: 100
-  Duration: 3
+  Duration: 1
 --- !u!50 &2024953293936103789
 Rigidbody2D:
   serializedVersion: 4
