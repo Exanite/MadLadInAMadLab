@@ -4935,10 +4935,10 @@ MonoBehaviour:
   MinSpreadRange: 0.5
   MaxSpreadRange: 2
   SpreadTryCount: 3
-  SpreadCheckRadius: 0.5
-  BurnRadius: 0.5
-  MinSpreadTime: 1
-  MaxSpreadTime: 3
+  SpreadCheckRadius: 0.3
+  BurnRadius: 1.5
+  MinSpreadTime: 2
+  MaxSpreadTime: 4
 --- !u!58 &2426616383781921718
 CircleCollider2D:
   m_ObjectHideFlags: 0
