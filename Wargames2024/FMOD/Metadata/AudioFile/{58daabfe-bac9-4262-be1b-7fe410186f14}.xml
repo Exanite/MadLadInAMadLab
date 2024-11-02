@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{58daabfe-bac9-4262-be1b-7fe410186f14}">
+		<property name="assetPath">
+			<value>roomtone_overhead_fan_002.mp3</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>264.024</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{8d396bfc-f017-401d-9356-26c8a0e09c31}</destination>
+		</relationship>
+	</object>
+</objects>

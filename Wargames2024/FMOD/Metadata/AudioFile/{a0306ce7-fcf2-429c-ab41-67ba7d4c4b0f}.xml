@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{a0306ce7-fcf2-429c-ab41-67ba7d4c4b0f}">
+		<property name="assetPath">
+			<value>Impact_Drum Hit_03.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>6.048</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{8d396bfc-f017-401d-9356-26c8a0e09c31}</destination>
+		</relationship>
+	</object>
+</objects>

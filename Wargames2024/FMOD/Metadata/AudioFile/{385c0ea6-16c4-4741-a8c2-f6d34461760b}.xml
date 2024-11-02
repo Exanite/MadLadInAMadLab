@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{385c0ea6-16c4-4741-a8c2-f6d34461760b}">
+		<property name="assetPath">
+			<value>med_dark_001.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>4.8239999999999998</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{8d396bfc-f017-401d-9356-26c8a0e09c31}</destination>
+		</relationship>
+	</object>
+</objects>
