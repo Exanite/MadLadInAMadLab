@@ -9,6 +9,11 @@ public class EntityHealth : MonoBehaviour
 
     private void Update()
     {
+        if (Health <= 0)
+        {
+            Destroy(gameObject);
+        }
+
         Health += RegenPerSecond * Time.deltaTime;
         Health = Math.Clamp(Health, 0, MaxHealth);
     }
