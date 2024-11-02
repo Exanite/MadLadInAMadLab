@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: PressurePlate
+  m_Name: PressurePlate3
   m_Shader: {fileID: -6465566751694194690, guid: c8934aaa2b6e74347823c82527331988, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -61,6 +61,9 @@ Material:
     - _BlueMultiplier: 5
     - _ColorMultiplier: 9.41
     - _EnableExternalAlpha: 0
+    - _PostMultiplier: 1
+    - _PreMultiplier: 2
+    - _PulseMultiplier: 1.5
     - _WhiteMultiplier: 1.25
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
