@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 2474442571265775281}
   - component: {fileID: 1304174952971045730}
   - component: {fileID: 5082620418939457938}
+  - component: {fileID: 7755269796623187569}
+  - component: {fileID: 632554406463687456}
   m_Layer: 0
   m_Name: Door
   m_TagString: Untagged
@@ -97,5 +99,87 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45f14f6de5cd1ab4589922500d9c79bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Sprites: []
+  Sprites:
+  - {fileID: 860920671, guid: 62bc894e052206247850ef335b035a7d, type: 3}
+  - {fileID: 1205163553, guid: 62bc894e052206247850ef335b035a7d, type: 3}
+  - {fileID: 1359758858, guid: 62bc894e052206247850ef335b035a7d, type: 3}
+  - {fileID: -206582115, guid: 62bc894e052206247850ef335b035a7d, type: 3}
+  - {fileID: 1291883150, guid: 62bc894e052206247850ef335b035a7d, type: 3}
+  - {fileID: 2005508969, guid: 62bc894e052206247850ef335b035a7d, type: 3}
+  - {fileID: 1162944716, guid: 62bc894e052206247850ef335b035a7d, type: 3}
   SpriteRenderer: {fileID: 1304174952971045730}
+  rigidbody2D: {fileID: 7755269796623187569}
+  shouldOpen: 0
+  shouldChange: 0
+--- !u!50 &7755269796623187569
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6555168562619873083}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!61 &632554406463687456
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6555168562619873083}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.5, y: 1}
+  m_EdgeRadius: 0
