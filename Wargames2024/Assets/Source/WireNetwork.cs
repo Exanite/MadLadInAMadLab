@@ -11,7 +11,14 @@ public class WireNetwork : MonoBehaviour
     public int Threshold = 1;
     public bool Invert = false;
 
-    public bool IsOn
+    private int PowerLevel => EnergySources.Count;
+    private int MaxPowerLevel => Threshold;
+    private float Proportion => Mathf.Clamp01((float)PowerLevel / MaxPowerLevel);
+
+    public bool HasPartialPower => PartialPower != 0;
+    public float PartialPower => Invert ? (1 - Proportion) : Proportion;
+
+    public bool IsFullyOn
     {
         get
         {

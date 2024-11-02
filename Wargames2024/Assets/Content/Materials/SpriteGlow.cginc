@@ -10,7 +10,7 @@ void Process_float(
     out float4 Out)
 {
     float multiplier = PreMultiplier;
-    multiplier += ((sin(Time * 3.14) + 1) / 2) * PulseMultiplier;;
+    multiplier *= 1 + ((sin(Time * 3.14) + 1) / 2) * PulseMultiplier;;
     multiplier *= PostMultiplier;
 
     Out = In * multiplier;
