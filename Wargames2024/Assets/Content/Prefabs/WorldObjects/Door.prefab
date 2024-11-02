@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1304174952971045730}
   - component: {fileID: 6768777052777646722}
   m_Layer: 0
-  m_Name: PressurePlate
+  m_Name: Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1395846388, guid: 433e3ed2c63e2e244b3e4261784a0ca8, type: 3}
+  m_Sprite: {fileID: 860920671, guid: 62bc894e052206247850ef335b035a7d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

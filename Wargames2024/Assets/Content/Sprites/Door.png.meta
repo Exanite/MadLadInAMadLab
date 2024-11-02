@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 433e3ed2c63e2e244b3e4261784a0ca8
+guid: 62bc894e052206247850ef335b035a7d
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -97,11 +97,11 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SpriteSheet_0
+      name: Door_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 144
+        y: 0
         width: 16
         height: 16
       alignment: 0
@@ -111,18 +111,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ac21f53501085264dae82ad4678cfc1e
-      internalID: 1350381869
+      spriteID: 95fbd2e134266e74498805bed086cb4e
+      internalID: 860920671
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpriteSheet_1
+      name: Door_1
       rect:
         serializedVersion: 2
         x: 16
-        y: 144
+        y: 0
         width: 16
         height: 16
       alignment: 0
@@ -132,18 +132,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 29d5e9541586d1e4b971d2e5c24aa944
-      internalID: -623057224
+      spriteID: 1ca5db21b9ffab045a8dcff8e91c54b9
+      internalID: 1205163553
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpriteSheet_2
+      name: Door_2
       rect:
         serializedVersion: 2
         x: 32
-        y: 144
+        y: 0
         width: 16
         height: 16
       alignment: 0
@@ -153,18 +153,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e9a4dd7c28c8a284d94b1eb4991a7194
-      internalID: -1395846388
+      spriteID: 2df8cc3b7bdb5ec4d87bd0bdee350529
+      internalID: 1359758858
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpriteSheet_3
+      name: Door_3
       rect:
         serializedVersion: 2
         x: 48
-        y: 144
+        y: 0
         width: 16
         height: 16
       alignment: 0
@@ -174,18 +174,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 05a8356eb4fbf7c4b953ec4ca1f43bda
-      internalID: 264315054
+      spriteID: 72e6c33512f6cb947b149902cf49625c
+      internalID: -206582115
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpriteSheet_4
+      name: Door_4
       rect:
         serializedVersion: 2
         x: 64
-        y: 144
+        y: 0
         width: 16
         height: 16
       alignment: 0
@@ -195,18 +195,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 30d44e5d471067041b0148c8b8f21a58
-      internalID: 531114309
+      spriteID: 041e551783742f740b7a113060c4afb3
+      internalID: 1291883150
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpriteSheet_5
+      name: Door_5
       rect:
         serializedVersion: 2
         x: 80
-        y: 144
+        y: 0
         width: 16
         height: 16
       alignment: 0
@@ -216,18 +216,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c0c75ee91d3c64e498387d79c37f4234
-      internalID: -314817188
+      spriteID: ca98df1c53902e243b400eaf762bdae8
+      internalID: 2005508969
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpriteSheet_6
+      name: Door_6
       rect:
         serializedVersion: 2
         x: 96
-        y: 144
+        y: 0
         width: 16
         height: 16
       alignment: 0
@@ -237,29 +237,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6fca3494dde8155419baa2e5c0eb4850
-      internalID: 1735442258
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SpriteSheet_7
-      rect:
-        serializedVersion: 2
-        x: 112
-        y: 144
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e9c6ace649146824799a6edcb262e715
-      internalID: -53616270
+      spriteID: 21f6c5760d0ac6648945343aea3927d0
+      internalID: 1162944716
       vertices: []
       indices: 
       edges: []
@@ -275,14 +254,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      SpriteSheet_0: 1350381869
-      SpriteSheet_1: -623057224
-      SpriteSheet_2: -1395846388
-      SpriteSheet_3: 264315054
-      SpriteSheet_4: 531114309
-      SpriteSheet_5: -314817188
-      SpriteSheet_6: 1735442258
-      SpriteSheet_7: -53616270
+      Door_0: 860920671
+      Door_1: 1205163553
+      Door_2: 1359758858
+      Door_3: -206582115
+      Door_4: 1291883150
+      Door_5: 2005508969
+      Door_6: 1162944716
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
