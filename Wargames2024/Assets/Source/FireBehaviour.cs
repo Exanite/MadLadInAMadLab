@@ -1,5 +1,7 @@
+using DG.Tweening;
 using Exanite.Core.Pooling;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 using Random = UnityEngine.Random;
 
 public class FireBehaviour : MonoBehaviour
@@ -8,6 +10,10 @@ public class FireBehaviour : MonoBehaviour
     // Spread: Creates a new copy of the fire in a random location around the fire
     // Ignite: Sets things the fire touches on fire, if it is not already on fire
     // Burn: Damages things that are nearby, if they are burnable
+
+    public ParticleSystem ParticleSystem;
+    public Collider2D Collider;
+    public Light2D Light;
 
     public float DamagePerSecond = 10;
     public float Duration = 5;
@@ -32,9 +38,15 @@ public class FireBehaviour : MonoBehaviour
 
     private float timeAlive;
 
+    private float lightIntensity;
+
     private void Start()
     {
         UpdateSpreadTime();
+
+        lightIntensity = Light.intensity;
+        Light.intensity = 0;
+        DOTween.To(() => Light.intensity, value => Light.intensity = value, lightIntensity, 5);
     }
 
     private void FixedUpdate()
@@ -68,7 +80,11 @@ public class FireBehaviour : MonoBehaviour
         timeAlive += Time.deltaTime;
         if (timeAlive > Duration)
         {
-            Destroy(gameObject);
+            DOTween.To(() => Light.intensity, value => Light.intensity = value, 0, 8);
+            Collider.enabled = false;
+            enabled = false;
+            ParticleSystem.Stop();
+            Destroy(gameObject, 10);
         }
     }
 
