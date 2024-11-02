@@ -264,6 +264,90 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_8
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea947a4a94442a7418ef7ff826aa787c
+      internalID: 1297426312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_9
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cde05865e42464a4d84e38f0e6ad4b25
+      internalID: 966138597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_10
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f411914d50b7d124898fd3c133416d27
+      internalID: 377276525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_11
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4638b933bc0262149b0aabc94271ce0a
+      internalID: -1986794426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -277,12 +361,16 @@ TextureImporter:
     nameFileIdTable:
       SpriteSheet_0: 1350381869
       SpriteSheet_1: -623057224
+      SpriteSheet_10: 377276525
+      SpriteSheet_11: -1986794426
       SpriteSheet_2: -1395846388
       SpriteSheet_3: 264315054
       SpriteSheet_4: 531114309
       SpriteSheet_5: -314817188
       SpriteSheet_6: 1735442258
       SpriteSheet_7: -53616270
+      SpriteSheet_8: 1297426312
+      SpriteSheet_9: 966138597
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
