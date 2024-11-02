@@ -11,6 +11,8 @@ public class EntityHealth : MonoBehaviour
 
     public List<Object> DestroyOnDeath = new();
 
+    public event Action Died;
+
     private void Update()
     {
         if (Health <= 0)
@@ -19,6 +21,10 @@ public class EntityHealth : MonoBehaviour
             {
                 Destroy(o);
             }
+
+            Died?.Invoke();
+
+            return;
         }
 
         Health += RegenPerSecond * Time.deltaTime;
