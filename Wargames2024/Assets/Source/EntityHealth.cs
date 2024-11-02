@@ -15,9 +15,16 @@ public class EntityHealth : MonoBehaviour
     {
         if (Health <= 0)
         {
-            foreach (var o in DestroyOnDeath)
+            foreach (var obj in DestroyOnDeath)
             {
-                Destroy(o);
+                if (obj is IDestroyable destroyable)
+                {
+                    destroyable.Destroy();
+                }
+                else
+                {
+                    Destroy(obj);
+                }
             }
         }
 
