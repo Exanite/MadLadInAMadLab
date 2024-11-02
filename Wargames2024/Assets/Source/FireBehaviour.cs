@@ -1,5 +1,6 @@
 using DG.Tweening;
 using Exanite.Core.Pooling;
+using FMODUnity;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 using Random = UnityEngine.Random;
@@ -14,6 +15,7 @@ public class FireBehaviour : MonoBehaviour
     public ParticleSystem ParticleSystem;
     public Collider2D Collider;
     public Light2D Light;
+    public StudioEventEmitter AudioEmitter;
 
     public float DamagePerSecond = 10;
     public float Duration = 5;
@@ -47,6 +49,7 @@ public class FireBehaviour : MonoBehaviour
         lightIntensity = Light.intensity;
         Light.intensity = 0;
         DOTween.To(() => Light.intensity, value => Light.intensity = value, lightIntensity, 5);
+        AudioEmitter.SetParameter("FireIntensity", 1);
     }
 
     private void FixedUpdate()
@@ -91,6 +94,7 @@ public class FireBehaviour : MonoBehaviour
             Collider.enabled = false;
             enabled = false;
             ParticleSystem.Stop();
+            AudioEmitter.SetParameter("FireIntensity", 0);
             Destroy(gameObject, 10);
         }
     }

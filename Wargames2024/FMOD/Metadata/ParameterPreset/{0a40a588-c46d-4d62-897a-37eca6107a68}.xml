@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{0a40a588-c46d-4d62-897a-37eca6107a68}">
+		<property name="name">
+			<value>FireIntensity</value>
+		</property>
+		<relationship name="folder">
+			<destination>{848c17fc-747f-4432-9953-92b495119776}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{d1d57912-d956-404f-a3c7-9a6268fcfef2}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{d1d57912-d956-404f-a3c7-9a6268fcfef2}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+		<property name="seekSpeed">
+			<value>1</value>
+		</property>
+	</object>
+</objects>
