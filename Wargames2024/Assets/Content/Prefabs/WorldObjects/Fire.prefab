@@ -4895,6 +4895,69 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!1 &6851342700990841121
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7047367916045909078}
+  - component: {fileID: 924542851866359073}
+  m_Layer: 0
+  m_Name: Audio
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7047367916045909078
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6851342700990841121}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.41, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6482745389429935559}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &924542851866359073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6851342700990841121}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -347972478
+      Data2: 1123571890
+      Data3: 1803481758
+      Data4: -945979555
+    Path: event:/Fire
+  Event: 
+  PlayEvent: 11
+  StopEvent: 12
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &9192003976726042258
 GameObject:
   m_ObjectHideFlags: 0
@@ -4928,6 +4991,7 @@ Transform:
   m_Children:
   - {fileID: 4513544571119156995}
   - {fileID: 1700629549173437158}
+  - {fileID: 7047367916045909078}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4273630159239241065
@@ -4945,12 +5009,13 @@ MonoBehaviour:
   ParticleSystem: {fileID: 6697460594109388483}
   Collider: {fileID: 2426616383781921718}
   Light: {fileID: 2674729318107653009}
+  AudioEmitter: {fileID: 924542851866359073}
   DamagePerSecond: 10
   Duration: 10
   MinSpreadRange: 1
   MaxSpreadRange: 2
   SpreadTryCount: 5
-  SpreadCheckRadius: 0.8
+  SpreadCheckRadius: 0.75
   BurnRadius: 1.5
   MinSpreadTime: 3
   MaxSpreadTime: 4
