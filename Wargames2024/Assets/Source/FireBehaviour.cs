@@ -1,4 +1,7 @@
+using System;
+using Exanite.Core.Pooling;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class FireBehaviour : MonoBehaviour
 {
@@ -20,6 +23,9 @@ public class FireBehaviour : MonoBehaviour
     public float SpreadCheckRadius = 0.5f;
 
     [Space]
+    public float BurnRadius = 0.5f;
+
+    [Space]
     public float MinSpreadTime = 1;
     public float MaxSpreadTime = 5;
 
@@ -33,8 +39,24 @@ public class FireBehaviour : MonoBehaviour
         UpdateSpreadTime();
     }
 
+    private void FixedUpdate()
+    {
+        using var _ = ListPool<Collider2D>.Acquire(out var results);
+
+        // Burn
+        Physics2D.OverlapCircle(transform.position, BurnRadius, default, results);
+        foreach (var result in results)
+        {
+            if (result.attachedRigidbody && result.attachedRigidbody.TryGetComponent(out BurnableObject _) && result.attachedRigidbody.TryGetComponent(out EntityHealth entityHealth))
+            {
+                entityHealth.Health -= DamagePerSecond * Time.deltaTime;
+            }
+        }
+    }
+
     private void Update()
     {
+        // Spread
         spreadTimer += Time.deltaTime;
         if (spreadTimer > nextSpreadTime)
         {
@@ -44,6 +66,7 @@ public class FireBehaviour : MonoBehaviour
             spreadTimer = 0;
         }
 
+        // Lifetime
         timeAlive += Time.deltaTime;
         if (timeAlive > Duration)
         {
