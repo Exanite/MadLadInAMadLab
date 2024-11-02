@@ -1,7 +1,4 @@
-using System.Diagnostics.CodeAnalysis;
 using Exanite.Core.Utilities;
-using Unity.VisualScripting;
-using Unity.VisualScripting.InputSystem;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -15,11 +12,12 @@ public class PlayerCharacter : MonoBehaviour
     public float MovementSpeed = 10;
     public float MovementSmoothTime = 0.3f;
 
-    public float rotationSpeed = 5f;
+    public float rotationSpeed = 180f;
 
     private Vector3 referenceVelocity;
 
     private GameContext gameContext;
+
     private void OnEnable()
     {
         gameContext = GameContext.Instance;
@@ -40,11 +38,12 @@ public class PlayerCharacter : MonoBehaviour
         targetVelocity *= MovementSpeed;
         Rigidbody.velocity = Vector3.SmoothDamp(Rigidbody.velocity, targetVelocity, ref referenceVelocity, MovementSmoothTime);
 
-        Rigidbody.velocity.Dump();
+        if (targetVelocity != Vector2.zero)
+        {
+            var angleDegrees = Mathf.Atan2(targetVelocity.y, targetVelocity.x) * Mathf.Rad2Deg;
+            var targetRotation = Quaternion.Euler(0, 0, angleDegrees);
 
-        var angleDegrees = Mathf.Atan2(Rigidbody.velocity.y, Rigidbody.velocity.x) * Mathf.Rad2Deg;
-        var targetRotation = Quaternion.Euler(0, 0, angleDegrees);
-
-        sprite.transform.rotation = targetRotation;
+            sprite.transform.rotation = Quaternion.Slerp(targetRotation, sprite.transform.rotation, Mathf.Pow(0.5f, rotationSpeed * Time.deltaTime));
+        }
     }
 }
