@@ -1,4 +1,3 @@
-using Exanite.Core.Utilities;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
