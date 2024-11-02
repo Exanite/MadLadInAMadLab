@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class PressurePlate : MonoBehaviour
@@ -8,26 +9,26 @@ public class PressurePlate : MonoBehaviour
     public GameObject Audio;
 
     public WireNetwork Network;
-    private int count = 0;
+    private HashSet<Collider2D> colliders = new();
 
     private void Update()
     {
-        Sprite3.gameObject.SetActive(count > 0);
-        Audio.gameObject.SetActive(count > 0);
+        colliders.RemoveWhere(x => x == null);
+
+        Sprite3.gameObject.SetActive(colliders.Count > 0);
+        Audio.gameObject.SetActive(colliders.Count > 0);
     }
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        count++;
-
+        colliders.Add(col);
         Network.EnergySources.Add(gameObject);
     }
 
     private void OnTriggerExit2D(Collider2D col)
     {
-        count--;
-
-        if (count == 0)
+        colliders.Remove(col);
+        if (colliders.Count == 0)
         {
             Network.EnergySources.Remove(gameObject);
         }
