@@ -41,6 +41,9 @@ TagManager:
   - name: Floor
     uniqueID: 2642028977
     locked: 0
+  - name: Wiring
+    uniqueID: 1112674431
+    locked: 0
   - name: OnFloor
     uniqueID: 504513889
     locked: 0
