@@ -1,5 +1,7 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
+using Object = UnityEngine.Object;
 
 public class EntityHealth : MonoBehaviour
 {
@@ -7,11 +9,16 @@ public class EntityHealth : MonoBehaviour
     public float MaxHealth = 100;
     public float RegenPerSecond = 0;
 
+    public List<Object> DestroyOnDeath = new();
+
     private void Update()
     {
         if (Health <= 0)
         {
-            Destroy(gameObject);
+            foreach (var o in DestroyOnDeath)
+            {
+                Destroy(o);
+            }
         }
 
         Health += RegenPerSecond * Time.deltaTime;

@@ -194,6 +194,8 @@ MonoBehaviour:
   Health: 250
   MaxHealth: 250
   RegenPerSecond: 0
+  DestroyOnDeath:
+  - {fileID: 4665235022908640724}
 --- !u!114 &7450429675524048071
 MonoBehaviour:
   m_ObjectHideFlags: 0
