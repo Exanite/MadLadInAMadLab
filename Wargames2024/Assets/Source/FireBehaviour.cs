@@ -51,9 +51,8 @@ public class FireBehaviour : MonoBehaviour
 
     private void FixedUpdate()
     {
-        using var _ = ListPool<Collider2D>.Acquire(out var results);
-
         // Burn
+        using var _ = ListPool<Collider2D>.Acquire(out var results);
         Physics2D.OverlapCircle(transform.position, BurnRadius, default, results);
         foreach (var result in results)
         {
