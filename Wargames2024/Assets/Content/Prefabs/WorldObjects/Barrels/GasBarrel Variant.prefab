@@ -16,6 +16,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GasBarrel Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 7450429675524048071, guid: 1c6327df0574a3b498b5d12b28cca44c, type: 3}
+      propertyPath: BurningDamageMultiplier
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 8098962607963412391, guid: 1c6327df0574a3b498b5d12b28cca44c, type: 3}
       propertyPath: Animation
       value: 
@@ -63,5 +67,40 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4665235022908640724, guid: 1c6327df0574a3b498b5d12b28cca44c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1123431753625816770}
   m_SourcePrefab: {fileID: 100100000, guid: 1c6327df0574a3b498b5d12b28cca44c, type: 3}
+--- !u!114 &1321938410027746548 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4443057166694562126, guid: 1c6327df0574a3b498b5d12b28cca44c, type: 3}
+  m_PrefabInstance: {fileID: 3454435775351045562}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8020525558177558638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ee2e56160c40184c86cef52e9856dcc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &8020525558177558638 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4665235022908640724, guid: 1c6327df0574a3b498b5d12b28cca44c, type: 3}
+  m_PrefabInstance: {fileID: 3454435775351045562}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1123431753625816770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8020525558177558638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd397cb4b93a4980a67711dc7f7349d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Health: {fileID: 1321938410027746548}
+  FragmentPrefab: {fileID: 1528228008349961820, guid: 0a9fb1dbea7165246a139f3ca6382405, type: 3}
+  MinFragments: 10
+  MaxFragments: 20

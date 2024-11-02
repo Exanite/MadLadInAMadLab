@@ -3,6 +3,7 @@ using UnityEngine;
 public class BurningFragment : MonoBehaviour
 {
     public Rigidbody2D Rigidbody;
+    public FireBehaviour Fire;
 
     public float InitialSpeed = 50;
     public float Duration = 1;
@@ -19,6 +20,9 @@ public class BurningFragment : MonoBehaviour
         lifetime += Time.deltaTime;
         if (lifetime > Duration)
         {
+            Fire.transform.parent = null;
+            Fire.Stop();
+
             Destroy(gameObject);
         }
     }

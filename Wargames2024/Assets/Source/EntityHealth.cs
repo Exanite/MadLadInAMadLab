@@ -17,12 +17,12 @@ public class EntityHealth : MonoBehaviour
     {
         if (Health <= 0)
         {
+            Died?.Invoke();
+
             foreach (var o in DestroyOnDeath)
             {
                 Destroy(o);
             }
-
-            Died?.Invoke();
 
             return;
         }

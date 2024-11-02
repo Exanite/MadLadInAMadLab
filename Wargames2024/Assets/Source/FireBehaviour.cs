@@ -57,9 +57,9 @@ public class FireBehaviour : MonoBehaviour
         Physics2D.OverlapCircle(transform.position, BurnRadius, default, results);
         foreach (var result in results)
         {
-            if (result.attachedRigidbody && result.attachedRigidbody.TryGetComponent(out BurnableObject _) && result.attachedRigidbody.TryGetComponent(out EntityHealth entityHealth))
+            if (result.attachedRigidbody && result.attachedRigidbody.TryGetComponent(out BurnableObject burnableObject) && result.attachedRigidbody.TryGetComponent(out EntityHealth entityHealth))
             {
-                entityHealth.Health -= DamagePerSecond * Time.deltaTime;
+                entityHealth.Health -= burnableObject.BurningDamageMultiplier * DamagePerSecond * Time.deltaTime;
             }
         }
     }
@@ -79,6 +79,14 @@ public class FireBehaviour : MonoBehaviour
         // Lifetime
         timeAlive += Time.deltaTime;
         if (timeAlive > Duration)
+        {
+            Stop();
+        }
+    }
+
+    public void Stop()
+    {
+        if (enabled)
         {
             DOTween.To(() => Light.intensity, value => Light.intensity = value, 0, 8);
             Collider.enabled = false;
