@@ -30,7 +30,7 @@ public class ExplodeOnDeath : MonoBehaviour
     private void OnDied()
     {
         var lifetime = new GameObject("Explosion");
-        StartCoroutine(Explode(lifetime));
+        lifetime.AddComponent<CoroutineLifetime>().StartCoroutine(Explode(lifetime));
     }
 
     private IEnumerator Explode(GameObject lifetime)
@@ -69,6 +69,11 @@ public class ExplodeOnDeath : MonoBehaviour
         {
             foreach (var result in results)
             {
+                if (!result)
+                {
+                    continue;
+                }
+
                 if (result.attachedRigidbody)
                 {
                     var directionMagnitude = result.transform.position - position;

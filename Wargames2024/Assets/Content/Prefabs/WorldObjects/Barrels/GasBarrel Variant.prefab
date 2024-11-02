@@ -106,9 +106,9 @@ MonoBehaviour:
   MaxFragments: 16
   ExplosionDamage: 100
   ExplosionRadius: 10
-  ExplosionForce: 1000
-  ExplosionDuration: 0.5
-  TimeBetweenExplosionTicks: 0.05
+  ExplosionForce: 500
+  ExplosionDuration: 0.05
+  TimeBetweenExplosionTicks: 0.01
   ExplosionFalloff:
     serializedVersion: 2
     m_Curve:
