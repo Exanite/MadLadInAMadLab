@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Wiring-On
+  m_Name: Wiring
   m_Shader: {fileID: -6465566751694194690, guid: c8934aaa2b6e74347823c82527331988, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
