@@ -62,8 +62,8 @@ Material:
     - _ColorMultiplier: 9.41
     - _EnableExternalAlpha: 0
     - _PostMultiplier: 1
-    - _PreMultiplier: 2
-    - _PulseMultiplier: 1.5
+    - _PreMultiplier: 1.5
+    - _PulseMultiplier: 1
     - _WhiteMultiplier: 1.25
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}

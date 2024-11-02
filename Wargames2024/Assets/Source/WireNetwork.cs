@@ -27,7 +27,18 @@ public class WireNetwork : MonoBehaviour
     }
 
     public bool HasPartialPower => PartialPower != 0;
-    public float PartialPower => Invert ? (1 - Proportion) : Proportion;
+    public float PartialPower
+    {
+        get
+        {
+            if (MaxPowerLevel == 0)
+            {
+                return 1;
+            }
+
+            return Invert ? (1 - Proportion) : Proportion;
+        }
+    }
 
     public List<WireNetwork> NetworksToActivate = new();
 
