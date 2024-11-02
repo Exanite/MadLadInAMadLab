@@ -13,16 +13,19 @@ public class PlayerCharacter : MonoBehaviour
 
     private Vector3 referenceVelocity;
 
+    private GameContext gameContext;
+
     private void OnEnable()
     {
-        GameContext.Instance.Player = this;
+        gameContext = GameContext.Instance;
+        gameContext.Player = this;
     }
 
     private void OnDisable()
     {
-        if (GameContext.Instance.Player == this)
+        if (gameContext.Player == this)
         {
-            GameContext.Instance.Player = null;
+            gameContext.Player = null;
         }
     }
 
