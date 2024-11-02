@@ -1,4 +1,3 @@
-using System;
 using Exanite.Core.Pooling;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -19,7 +18,6 @@ public class FireBehaviour : MonoBehaviour
 
     [Space]
     public int SpreadTryCount = 3;
-    public float SpreadProbability = 0.5f;
     public float SpreadCheckRadius = 0.5f;
 
     [Space]
