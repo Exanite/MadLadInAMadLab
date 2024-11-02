@@ -63,8 +63,8 @@
 		</relationship>
 	</object>
 	<object class="EventAutomatableProperties" id="{53e3f0eb-0e54-4418-885d-ad95631f1064}">
-		<property name="maxVoices">
-			<value>10</value>
+		<property name="voiceStealing">
+			<value>1</value>
 		</property>
 	</object>
 	<object class="MarkerTrack" id="{21cb4b7c-8241-4fba-9fe3-7e0566c4ee3d}" />
@@ -200,7 +200,7 @@
 			<value>1</value>
 		</property>
 		<property name="value">
-			<value>0</value>
+			<value>-3.5</value>
 		</property>
 	</object>
 </objects>

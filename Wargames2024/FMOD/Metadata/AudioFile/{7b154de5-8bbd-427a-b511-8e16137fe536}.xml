@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{7b154de5-8bbd-427a-b511-8e16137fe536}">
+		<property name="assetPath">
+			<value>Aldous Ichnite - Final Descent.mp3</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>240.048</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{8d396bfc-f017-401d-9356-26c8a0e09c31}</destination>
+		</relationship>
+	</object>
+</objects>
