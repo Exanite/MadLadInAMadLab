@@ -14,7 +14,6 @@ public class PlayerCharacter : MonoBehaviour
     private Vector3 referenceVelocity;
 
     private GameContext gameContext;
-
     private void OnEnable()
     {
         gameContext = GameContext.Instance;

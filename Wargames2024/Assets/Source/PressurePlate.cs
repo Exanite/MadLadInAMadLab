@@ -18,14 +18,12 @@ public class PressurePlate : MonoBehaviour {
     }
 
     void OnTriggerEnter2D(Collider2D col) {
-        print("Triggered!");
         door.shouldOpen = true;
         door.shouldChange = true;
         count++;
     }
 
     void OnTriggerExit2D(Collider2D col) {
-        print("Exit!");
         count--;
         if (count == 0) {
             door.shouldOpen = false;
