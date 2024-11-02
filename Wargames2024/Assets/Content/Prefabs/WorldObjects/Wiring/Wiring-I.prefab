@@ -335,3 +335,27 @@ MonoBehaviour:
   Sprite1: {fileID: 2406387669388051746}
   Sprite2: {fileID: 3558414387292145230}
   Sprite3: {fileID: 7631903927235615398}
+  BrightnessCurve2:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1.0023804
+      value: 1.5134277
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4

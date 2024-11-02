@@ -10,6 +10,8 @@ public class Wire : MonoBehaviour
     public SpriteRenderer Sprite2;
     public SpriteRenderer Sprite3;
 
+    public AnimationCurve BrightnessCurve2 = new();
+
     private Material material2;
 
     private void Start()
@@ -30,7 +32,7 @@ public class Wire : MonoBehaviour
         Sprite2.gameObject.SetActive(Network.HasPartialPower);
         Sprite3.gameObject.SetActive(Network.IsFullyOn);
 
-        material2.SetFloat(PostMultiplier, Network.PartialPower);
+        material2.SetFloat(PostMultiplier, BrightnessCurve2.Evaluate(Network.PartialPower));
     }
 
     private void OnDestroy()
