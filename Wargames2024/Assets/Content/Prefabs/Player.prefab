@@ -167,6 +167,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MovementInput: {fileID: -7857667062164034563, guid: 467cb74b20c92f74890a57ce5a31574f, type: 3}
   Rigidbody: {fileID: 6406784594578133735}
+  Health: {fileID: 3858286251893545890}
   MovementSpeed: 5
   MovementSmoothTime: 0.05
 --- !u!114 &3858286251893545890
@@ -183,7 +184,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Health: 100
   MaxHealth: 100
-  RegenPerSecond: 0
+  RegenPerSecond: 1
 --- !u!114 &7374236602298486776
 MonoBehaviour:
   m_ObjectHideFlags: 0
