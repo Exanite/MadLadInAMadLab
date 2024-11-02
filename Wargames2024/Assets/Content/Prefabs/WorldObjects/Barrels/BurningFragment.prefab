@@ -125,6 +125,18 @@ PrefabInstance:
       propertyPath: m_PointLightOuterRadius
       value: 2.5
       objectReference: {fileID: 0}
+    - target: {fileID: 4273630159239241065, guid: 756f4ee0e06b3ab43b7ef42019fdc658, type: 3}
+      propertyPath: MaxSpreadTime
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4273630159239241065, guid: 756f4ee0e06b3ab43b7ef42019fdc658, type: 3}
+      propertyPath: MinSpreadTime
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4273630159239241065, guid: 756f4ee0e06b3ab43b7ef42019fdc658, type: 3}
+      propertyPath: DamagePerSecond
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6482745389429935559, guid: 756f4ee0e06b3ab43b7ef42019fdc658, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -168,6 +180,34 @@ PrefabInstance:
     - target: {fileID: 6697460594109388483, guid: 756f4ee0e06b3ab43b7ef42019fdc658, type: 3}
       propertyPath: EmissionModule.rateOverTime.scalar
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 6697460594109388483, guid: 756f4ee0e06b3ab43b7ef42019fdc658, type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6697460594109388483, guid: 756f4ee0e06b3ab43b7ef42019fdc658, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.atime2
+      value: 24176
+      objectReference: {fileID: 0}
+    - target: {fileID: 6697460594109388483, guid: 756f4ee0e06b3ab43b7ef42019fdc658, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.atime3
+      value: 65535
+      objectReference: {fileID: 0}
+    - target: {fileID: 6697460594109388483, guid: 756f4ee0e06b3ab43b7ef42019fdc658, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key3.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6697460594109388483, guid: 756f4ee0e06b3ab43b7ef42019fdc658, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.m_NumAlphaKeys
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6697460594109388483, guid: 756f4ee0e06b3ab43b7ef42019fdc658, type: 3}
+      propertyPath: EmissionModule.m_Bursts.Array.data[0].cycleCount
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6697460594109388483, guid: 756f4ee0e06b3ab43b7ef42019fdc658, type: 3}
+      propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.scalar
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 9192003976726042258, guid: 756f4ee0e06b3ab43b7ef42019fdc658, type: 3}
       propertyPath: m_Name
