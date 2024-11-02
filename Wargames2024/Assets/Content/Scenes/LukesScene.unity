@@ -1286,6 +1286,7 @@ MonoBehaviour:
   - {fileID: -1601038350, guid: 99357030402c77048b3ee77e42566e64, type: 3}
   - {fileID: -59437445, guid: 99357030402c77048b3ee77e42566e64, type: 3}
   - {fileID: -871237205, guid: 99357030402c77048b3ee77e42566e64, type: 3}
+  scene: WoodAndFire
   SpriteRenderer: {fileID: 1429459168}
   animationSpeed: 5
 --- !u!212 &1429459168 stripped
