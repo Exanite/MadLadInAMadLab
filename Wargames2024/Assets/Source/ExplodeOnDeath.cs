@@ -50,10 +50,17 @@ public class ExplodeOnDeath : MonoBehaviour
 
         foreach (var result in results)
         {
-            if (result.attachedRigidbody && result.attachedRigidbody.TryGetComponent(out BurnableObject burnableObject) && result.attachedRigidbody.TryGetComponent(out EntityHealth entityHealth))
+            if (result.attachedRigidbody && result.attachedRigidbody.TryGetComponent(out EntityHealth entityHealth))
             {
                 var distance = (result.transform.position - position).magnitude;
-                entityHealth.Health -= burnableObject.BurningDamageMultiplier * ExplosionFalloff.Evaluate(1 - Mathf.Clamp01(distance / ExplosionRadius)) * ExplosionDamage * Time.deltaTime;
+                var damage = ExplosionFalloff.Evaluate(1 - Mathf.Clamp01(distance / ExplosionRadius)) * ExplosionDamage;
+
+                if (result.attachedRigidbody.TryGetComponent(out BurnableObject burnableObject))
+                {
+                    damage *= burnableObject.BurningDamageMultiplier;
+                }
+
+                entityHealth.Health -= damage;
             }
         }
 
