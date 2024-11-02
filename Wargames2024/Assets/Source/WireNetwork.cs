@@ -13,7 +13,18 @@ public class WireNetwork : MonoBehaviour
 
     private int PowerLevel => EnergySources.Count;
     private int MaxPowerLevel => Threshold;
-    private float Proportion => Mathf.Clamp01((float)PowerLevel / MaxPowerLevel);
+    private float Proportion
+    {
+        get
+        {
+            if (MaxPowerLevel == 0)
+            {
+                return 0;
+            }
+
+            return Mathf.Clamp01((float)PowerLevel / MaxPowerLevel);
+        }
+    }
 
     public bool HasPartialPower => PartialPower != 0;
     public float PartialPower => Invert ? (1 - Proportion) : Proportion;
