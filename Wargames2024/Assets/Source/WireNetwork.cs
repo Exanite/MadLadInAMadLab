@@ -18,6 +18,8 @@ public class WireNetwork : MonoBehaviour
     public bool HasPartialPower => PartialPower != 0;
     public float PartialPower => Invert ? (1 - Proportion) : Proportion;
 
+    public List<WireNetwork> NetworksToActivate = new();
+
     public bool IsFullyOn
     {
         get
@@ -29,6 +31,24 @@ public class WireNetwork : MonoBehaviour
             }
 
             return result;
+        }
+    }
+
+    private void Update()
+    {
+        if (IsFullyOn)
+        {
+            foreach (var network in NetworksToActivate)
+            {
+                network.EnergySources.Add(gameObject);
+            }
+        }
+        else
+        {
+            foreach (var network in NetworksToActivate)
+            {
+                network.EnergySources.Remove(gameObject);
+            }
         }
     }
 }
