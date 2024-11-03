@@ -20,8 +20,11 @@ public class BurningFragment : MonoBehaviour
         lifetime += Time.deltaTime;
         if (lifetime > Duration)
         {
-            Fire.transform.parent = null;
-            Fire.Stop();
+            if (Fire)
+            {
+                Fire.transform.parent = null;
+                Fire.Stop();
+            }
 
             Destroy(gameObject);
         }
