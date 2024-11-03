@@ -5014,7 +5014,7 @@ MonoBehaviour:
   Duration: 100
   MinSpreadRange: 1
   MaxSpreadRange: 2
-  SpreadTryCount: 5
+  SpreadTryCount: 3
   SpreadDenialRadius: 0.8
   DamageRadius: 1
   DamageTickTime: 0.25
