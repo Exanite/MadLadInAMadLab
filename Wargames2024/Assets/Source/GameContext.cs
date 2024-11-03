@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using Exanite.Core.Components;
 using Exanite.Core.Utilities;
@@ -53,13 +54,43 @@ public class GameContext : SingletonBehaviour<GameContext>
     {
         SaveData = GenerateNewSaveData();
 
+        try
+        {
+            var json = new FileInfo(Path.Join(Application.persistentDataPath, "save.json")).Open(FileMode.Open, FileAccess.Read).ReadAsStringAndDispose();
+            var loadedData = JsonUtility.FromJson<SaveData>(json);
+            MigrateData(loadedData, SaveData);
+        }
+        catch
+        {
+            // Do nothing
+        }
+
         JsonUtility.ToJson(SaveData).Dump("Loaded save data");
     }
 
     public void Save()
     {
+        var newSave = GenerateNewSaveData();
+        MigrateData(SaveData, newSave);
+
+        SaveData = newSave;
+
+        var saveFile = new FileInfo(Path.Join(Application.persistentDataPath, "save.json"));
+        saveFile.Delete();
+
+        var json = JsonUtility.ToJson(newSave);
+
+        using var fileStream = saveFile.Open(FileMode.CreateNew, FileAccess.Write);
+        using var streamWriter = new StreamWriter(fileStream);
+        streamWriter.Write(json);
+
+        json.Dump("Saved the game");
+    }
+
+    private void MigrateData(SaveData from, SaveData to)
+    {
         var unlockedLevels = new HashSet<int>();
-        foreach (var level in SaveData.Levels)
+        foreach (var level in from.Levels)
         {
             if (level.IsUnlocked)
             {
@@ -67,19 +98,14 @@ public class GameContext : SingletonBehaviour<GameContext>
             }
         }
 
-        var newSave = GenerateNewSaveData();
         foreach (var unlockedLevelIndex in unlockedLevels)
         {
-            var level = newSave.Levels.FirstOrDefault(l => l.Index == unlockedLevelIndex);
+            var level = to.Levels.FirstOrDefault(l => l.Index == unlockedLevelIndex);
             if (level != null)
             {
                 level.IsUnlocked = true;
             }
         }
-
-        SaveData = newSave;
-
-        JsonUtility.ToJson(newSave).Dump("Saved the game");
     }
 
     private SaveData GenerateNewSaveData()
