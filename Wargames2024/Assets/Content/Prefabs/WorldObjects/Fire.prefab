@@ -870,7 +870,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 10
+      scalar: 5
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -1030,7 +1030,7 @@ ParticleSystem:
           m_PreInfinity: 2
           m_PostInfinity: 2
           m_RotationOrder: 4
-      cycleCount: 10
+      cycleCount: 5
       repeatInterval: 0.05
       probability: 1
   SizeModule:
@@ -5017,6 +5017,7 @@ MonoBehaviour:
   SpreadTryCount: 5
   SpreadCheckRadius: 0.75
   BurnRadius: 1.5
+  BurnTickTime: 0.25
   MinSpreadTime: 3
   MaxSpreadTime: 4
 --- !u!58 &2426616383781921718

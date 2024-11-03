@@ -101,29 +101,41 @@ public class FireBehaviour : MonoBehaviour
         }
     }
 
-    private void TrySpread() {
+    private void TrySpread()
+    {
+        var hasSpread = false;
         for (var i = 0; i < SpreadTryCount; i++) {
             var spreadRange = Random.Range(MinSpreadRange, MaxSpreadRange);
             var spreadPosition = transform.position + (Vector3)(Random.insideUnitCircle.normalized * spreadRange);
 
-            SpreadAt(spreadPosition);
+            if (SpreadAt(spreadPosition))
+            {
+                hasSpread = true;
 
-            break;
+                break;
+            }
         }
 
         using var _ = ListPool<Collider2D>.Acquire(out var results);
         Physics2D.OverlapCircle(transform.position, BurnRadius * 2, default, results);
         foreach (var result in results) {
-            if (result.attachedRigidbody && result.attachedRigidbody.TryGetComponent(out BurnableObject burnableObject) && !result.attachedRigidbody.TryGetComponent(out PlayerCharacter player)) {
+            if (result.attachedRigidbody && result.attachedRigidbody.TryGetComponent(out BurnableObject _) && !result.attachedRigidbody.TryGetComponent(out PlayerCharacter _)) {
                 var spreadRange = Random.Range(0, 2);
                 var spreadPosition = result.attachedRigidbody.transform.position + (Vector3)(Random.insideUnitCircle.normalized * spreadRange);
 
                 SpreadAt(spreadPosition);
+
+                hasSpread = true;
             }
+        }
+
+        if (!hasSpread)
+        {
+            MaxSpreadTime *= 2;
         }
     }
 
-    private void SpreadAt(Vector3 position)
+    private bool SpreadAt(Vector3 position)
     {
         using var _ = ListPool<RaycastHit2D>.Acquire(out var results);
         Physics2D.Linecast(transform.position, position, new ContactFilter2D()
@@ -135,11 +147,13 @@ public class FireBehaviour : MonoBehaviour
         {
             if (!hit.collider.TryGetComponent(out BurnableObject _) || !(hit.collider.attachedRigidbody && hit.collider.attachedRigidbody.TryGetComponent(out BurnableObject _)))
             {
-                return;
+                return false;
             }
         }
 
         Instantiate(GameContext.Instance.FirePrefab, position, Quaternion.identity);
+
+        return true;
     }
 
     private void UpdateSpreadTime() {
