@@ -30,6 +30,7 @@ public class FireBehaviour : MonoBehaviour
 
     [Space]
     public float BurnRadius = 0.5f;
+    public float BurnTickTime = 0.25f;
 
     [Space]
     public float MinSpreadTime = 1;
@@ -42,6 +43,8 @@ public class FireBehaviour : MonoBehaviour
 
     private float lightIntensity;
 
+    private float burnTimer = 0;
+
     private void Start() {
         UpdateSpreadTime();
 
@@ -53,21 +56,24 @@ public class FireBehaviour : MonoBehaviour
         CheckForResistantObjects();
     }
 
-    private void FixedUpdate() {
+    private void Update() {
         // Burn
-        using var _ = ListPool<Collider2D>.Acquire(out var results);
-        Physics2D.OverlapCircle(transform.position, BurnRadius, default, results);
-        foreach (var result in results) {
-            if (result.attachedRigidbody && result.attachedRigidbody.TryGetComponent(out BurnableObject burnableObject) && result.attachedRigidbody.TryGetComponent(out EntityHealth entityHealth)) {
-                if (result.attachedRigidbody.TryGetComponent(out PlayerCharacter player) && player.statusEffects[1,0] > 0) { 
-                    continue;
+        burnTimer += Time.deltaTime;
+        if (burnTimer > BurnTickTime)
+        {
+            burnTimer -= BurnTickTime;
+            using var _ = ListPool<Collider2D>.Acquire(out var results);
+            Physics2D.OverlapCircle(transform.position, BurnRadius, default, results);
+            foreach (var result in results) {
+                if (result.attachedRigidbody && result.attachedRigidbody.TryGetComponent(out BurnableObject burnableObject) && result.attachedRigidbody.TryGetComponent(out EntityHealth entityHealth)) {
+                    if (result.attachedRigidbody.TryGetComponent(out PlayerCharacter player) && player.statusEffects[1,0] > 0) {
+                        continue;
+                    }
+                    entityHealth.Health -= burnableObject.BurningDamageMultiplier * DamagePerSecond * BurnTickTime;
                 }
-                entityHealth.Health -= burnableObject.BurningDamageMultiplier * DamagePerSecond * Time.deltaTime;
             }
         }
-    }
 
-    private void Update() {
         // Spread
         spreadTimer += Time.deltaTime;
         if (spreadTimer > nextSpreadTime) {
