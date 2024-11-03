@@ -1,4 +1,6 @@
 using System;
+using Cysharp.Threading.Tasks;
+using Source.UserInterface;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -16,6 +18,8 @@ public class Teleporter : MonoBehaviour
     public int animationSpeed = 5;
     private float i = 0;
 
+    private bool isTeleporting;
+
     private void Update()
     {
         SpriteRenderer.sprite = Sprites[(int)Math.Floor(i) % 6 + 2];
@@ -32,9 +36,16 @@ public class Teleporter : MonoBehaviour
 
     private void Teleport()
     {
+        if (isTeleporting)
+        {
+            return;
+        }
+
+        isTeleporting = true;
+
         if (Type == TeleporterType.GoToSpecifiedScene)
         {
-            SceneManager.LoadScene(scene, LoadSceneMode.Single);
+            LoadScene(scene);
 
             return;
         }
@@ -58,6 +69,14 @@ public class Teleporter : MonoBehaviour
             return;
         }
 
-        SceneManager.LoadScene(levelOrder.Levels[nextSceneIndex].SceneName, LoadSceneMode.Single);
+        LoadScene(levelOrder.Levels[nextSceneIndex].SceneName);
+    }
+
+    private static void LoadScene(string sceneName)
+    {
+        BlackScreenTransitionDisplay.Instance.Fade(1, BlackScreenTransitionDisplay.Instance.TeleportDuration).ContinueWith(() =>
+        {
+            SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
+        }).Forget();
     }
 }
