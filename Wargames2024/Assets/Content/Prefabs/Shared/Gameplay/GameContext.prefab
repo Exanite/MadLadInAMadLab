@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5187170983563558872}
   - component: {fileID: 3861397860750694896}
-  - component: {fileID: 8206846605624727642}
   m_Layer: 0
   m_Name: GameContext
   m_TagString: Untagged
@@ -48,19 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dontDestroyOnLoad: 1
   FirePrefab: {fileID: 4273630159239241065, guid: 756f4ee0e06b3ab43b7ef42019fdc658, type: 3}
---- !u!114 &8206846605624727642
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7179260927760679254}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7b7b07086a840ce8dd61abf7ce037de, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dontDestroyOnLoad: 1
+  GameLevelOrder: {fileID: 11400000, guid: 1966db0e9a1dcca478f4ead6d1d70b95, type: 2}
 --- !u!1001 &4176449865974263736
 PrefabInstance:
   m_ObjectHideFlags: 0
