@@ -50,6 +50,8 @@ public class FireBehaviour : MonoBehaviour
         Light.intensity = 0;
         DOTween.To(() => Light.intensity, value => Light.intensity = value, lightIntensity, 5);
         AudioEmitter.SetParameter("FireIntensity", 1);
+
+        CheckForResistantObjects();
     }
 
     private void FixedUpdate() {
@@ -121,5 +123,17 @@ public class FireBehaviour : MonoBehaviour
     }
     private void UpdateSpreadTime() {
         nextSpreadTime = Random.Range(MinSpreadTime, MaxSpreadTime);
+    }
+
+    private void CheckForResistantObjects() {
+        using var _ = ListPool<Collider2D>.Acquire(out var results);
+        Physics2D.OverlapCircle(transform.position, BurnRadius, default, results);
+        foreach (var result in results) {
+            if (result.attachedRigidbody && result.attachedRigidbody.TryGetComponent(out FireResist resistantObject)) {
+                if (resistantObject.FireResistRadius >= resistantObject.attachedRigidbody.transform.position - transform.position) {
+                    Object.Destroy(this.gameObject);
+                }
+            }
+        }
     }
 }
