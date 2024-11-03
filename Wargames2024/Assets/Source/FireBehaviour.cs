@@ -1,4 +1,3 @@
-using System.Numerics;
 using DG.Tweening;
 using Exanite.Core.Pooling;
 using FMODUnity;
@@ -71,7 +70,7 @@ public class FireBehaviour : MonoBehaviour
         if (spreadTimer > nextSpreadTime) {
             TrySpread();
             UpdateSpreadTime();
-            
+
             spreadTimer = 0;
         }
 
@@ -96,13 +95,13 @@ public class FireBehaviour : MonoBehaviour
     private void TrySpread() {
         for (var i = 0; i < SpreadTryCount; i++) {
             var spreadRange = Random.Range(MinSpreadRange, MaxSpreadRange);
-            var spreadPosition = transform.position + (UnityEngine.Vector3)(Random.insideUnitCircle.normalized * spreadRange);
+            var spreadPosition = transform.position + (Vector3)(Random.insideUnitCircle.normalized * spreadRange);
 
             if (Physics2D.OverlapCircle(spreadPosition, SpreadCheckRadius))  {
                 continue;
             }
 
-            Instantiate(GameContext.Instance.FirePrefab, spreadPosition, UnityEngine.Quaternion.identity);
+            Instantiate(GameContext.Instance.FirePrefab, spreadPosition, Quaternion.identity);
 
             break;
         }
@@ -110,17 +109,31 @@ public class FireBehaviour : MonoBehaviour
         using var _ = ListPool<Collider2D>.Acquire(out var results);
         Physics2D.OverlapCircle(transform.position, BurnRadius * 2, default, results);
         foreach (var result in results) {
-            if (result.attachedRigidbody && result.attachedRigidbody.TryGetComponent(out BurnableObject burnableObject) && result.attachedRigidbody.TryGetComponent(out EntityHealth entityHealth) && !result.attachedRigidbody.TryGetComponent(out PlayerCharacter player)) {
-                SpreadAt(result.attachedRigidbody.transform.position);
+            if (result.attachedRigidbody && result.attachedRigidbody.TryGetComponent(out BurnableObject burnableObject) && !result.attachedRigidbody.TryGetComponent(out PlayerCharacter player)) {
+                var spreadRange = Random.Range(0, 2);
+                var spreadPosition = result.attachedRigidbody.transform.position + (Vector3)(Random.insideUnitCircle.normalized * spreadRange);
+
+                SpreadAt(spreadPosition);
             }
         }
     }
 
-    private void SpreadAt(UnityEngine.Vector3 position) {
-        var spreadRange = Random.Range(0, 2);
-        var spreadPosition = position + (UnityEngine.Vector3)(Random.insideUnitCircle.normalized * spreadRange);
-        Instantiate(GameContext.Instance.FirePrefab, spreadPosition, UnityEngine.Quaternion.identity);
+    private void SpreadAt(Vector3 position)
+    {
+        using var _ = ListPool<RaycastHit2D>.Acquire(out var results);
+        Physics2D.Linecast(transform.position, position, default, results);
+
+        foreach (var hit in results)
+        {
+            if (!hit.collider.TryGetComponent(out BurnableObject _) || !(hit.collider.attachedRigidbody && hit.collider.attachedRigidbody.TryGetComponent(out BurnableObject _)))
+            {
+                return;
+            }
+        }
+
+        Instantiate(GameContext.Instance.FirePrefab, position, Quaternion.identity);
     }
+
     private void UpdateSpreadTime() {
         nextSpreadTime = Random.Range(MinSpreadTime, MaxSpreadTime);
     }
@@ -131,7 +144,7 @@ public class FireBehaviour : MonoBehaviour
         foreach (var result in results) {
             if (result.attachedRigidbody && result.attachedRigidbody.TryGetComponent(out FireResist resistantObject)) {
                 if (resistantObject.FireResistRadius >= (result.attachedRigidbody.transform.position - transform.position).magnitude) {
-                    Object.Destroy(this.gameObject);
+                    Destroy(gameObject);
                 }
             }
         }
