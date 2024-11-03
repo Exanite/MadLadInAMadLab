@@ -634,7 +634,7 @@ PrefabInstance:
       objectReference: {fileID: 291998444}
     - target: {fileID: 4187460766405595154, guid: 2cf6485e7b685d74bbd351bbb72760bc, type: 3}
       propertyPath: EndWallOffset
-      value: -6
+      value: -5
       objectReference: {fileID: 0}
     - target: {fileID: 4187460766405595154, guid: 2cf6485e7b685d74bbd351bbb72760bc, type: 3}
       propertyPath: FirstTeleporterPosition
@@ -642,7 +642,7 @@ PrefabInstance:
       objectReference: {fileID: 1399600146}
     - target: {fileID: 4187460766405595154, guid: 2cf6485e7b685d74bbd351bbb72760bc, type: 3}
       propertyPath: SpaceBetweenTeleporters
-      value: 8
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
