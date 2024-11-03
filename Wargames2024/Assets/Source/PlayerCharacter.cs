@@ -1,4 +1,3 @@
-using System;
 using Cysharp.Threading.Tasks;
 using Source.UserInterface;
 using UnityEngine;

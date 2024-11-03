@@ -51,15 +51,7 @@ public class Teleporter : MonoBehaviour
         }
 
         var levelOrder = GameContext.Instance.GameLevelOrder;
-
-        var currentSceneName = SceneManager.GetActiveScene().name;
-        var currentSceneIndex = levelOrder.Levels.FindIndex(l => l.SceneName == currentSceneName);
-        if (currentSceneIndex == -1)
-        {
-            Debug.LogError($"Current scene is not registered in the {typeof(GameLevelOrder).Name}");
-
-            return;
-        }
+        var currentSceneIndex = levelOrder.GetCurrentLevelInfo().Index;
 
         var nextSceneIndex = currentSceneIndex + 1;
         if (nextSceneIndex >= levelOrder.Levels.Count)

@@ -20,18 +20,14 @@ namespace Source.UserInterface
 
         private Tweener current;
 
-        private void Start()
-        {
-            opacity = 1;
-            Fade(0, SceneLoadDuration);
-        }
-
         protected override void OnEnable()
         {
             base.OnEnable();
 
             SceneManager.sceneLoaded += OnSceneLoaded;
-            Fade(0, SceneLoadDuration);
+            opacity = 1;
+
+            Fade(0, SceneLoadDuration).Forget();
         }
 
         private void OnDisable()
