@@ -127,7 +127,7 @@ MonoBehaviour:
   dontDestroyOnLoad: 0
   Image: {fileID: 6097043683385343100}
   SceneLoadDuration: 1
-  DeathDuration: 3
+  DeathDuration: 2
   TeleportDuration: 1
 --- !u!1 &5055209099490364310
 GameObject:
