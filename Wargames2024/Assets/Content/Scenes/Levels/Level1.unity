@@ -30624,14 +30624,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1304174952971045730, guid: 96ab2d47abd617148a3f57ad202dd4a2, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 690588584, guid: 99357030402c77048b3ee77e42566e64, type: 3}
-    - target: {fileID: 1304174952971045730, guid: 96ab2d47abd617148a3f57ad202dd4a2, type: 3}
-      propertyPath: m_WasSpriteAssigned
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2474442571265775281, guid: 96ab2d47abd617148a3f57ad202dd4a2, type: 3}
       propertyPath: m_LocalPosition.x
       value: 15.99
@@ -30672,6 +30664,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3004937988327073237, guid: 96ab2d47abd617148a3f57ad202dd4a2, type: 3}
+      propertyPath: scene
+      value: MainTestingScene
+      objectReference: {fileID: 0}
     - target: {fileID: 6555168562619873083, guid: 96ab2d47abd617148a3f57ad202dd4a2, type: 3}
       propertyPath: m_Name
       value: Teleporter
@@ -30679,10 +30675,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6555168562619873083, guid: 96ab2d47abd617148a3f57ad202dd4a2, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1429459166}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 96ab2d47abd617148a3f57ad202dd4a2, type: 3}
 --- !u!1001 &206605376
 PrefabInstance:
@@ -31640,40 +31633,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3a08d938ae267c6439f31c748629efde, type: 3}
---- !u!1 &1429459165 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6555168562619873083, guid: 96ab2d47abd617148a3f57ad202dd4a2, type: 3}
-  m_PrefabInstance: {fileID: 127973302}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1429459166
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1429459165}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ebaccabb79d740845aec6d6166a77f46, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Sprites:
-  - {fileID: 690588584, guid: 99357030402c77048b3ee77e42566e64, type: 3}
-  - {fileID: 2101492184, guid: 99357030402c77048b3ee77e42566e64, type: 3}
-  - {fileID: 1961205275, guid: 99357030402c77048b3ee77e42566e64, type: 3}
-  - {fileID: 660299541, guid: 99357030402c77048b3ee77e42566e64, type: 3}
-  - {fileID: -1338299127, guid: 99357030402c77048b3ee77e42566e64, type: 3}
-  - {fileID: -1601038350, guid: 99357030402c77048b3ee77e42566e64, type: 3}
-  - {fileID: -59437445, guid: 99357030402c77048b3ee77e42566e64, type: 3}
-  - {fileID: -871237205, guid: 99357030402c77048b3ee77e42566e64, type: 3}
-  scene: WoodAndFire
-  SpriteRenderer: {fileID: 1429459168}
-  animationSpeed: 5
---- !u!212 &1429459168 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 1304174952971045730, guid: 96ab2d47abd617148a3f57ad202dd4a2, type: 3}
-  m_PrefabInstance: {fileID: 127973302}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1516326423
 PrefabInstance:
   m_ObjectHideFlags: 0

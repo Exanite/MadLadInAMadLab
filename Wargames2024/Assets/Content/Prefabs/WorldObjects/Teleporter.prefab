@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2474442571265775281}
   - component: {fileID: 1304174952971045730}
   - component: {fileID: 7219171077089942233}
+  - component: {fileID: 3004937988327073237}
   m_Layer: 0
   m_Name: Teleporter
   m_TagString: Untagged
@@ -74,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 504513889
   m_SortingLayer: -1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1901832420, guid: 6f5841e0b7e373648814c3031b2a05aa, type: 3}
+  m_Sprite: {fileID: 690588584, guid: 99357030402c77048b3ee77e42566e64, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -130,3 +131,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.875, y: 0.875}
   m_EdgeRadius: 0
+--- !u!114 &3004937988327073237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6555168562619873083}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebaccabb79d740845aec6d6166a77f46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Sprites:
+  - {fileID: 690588584, guid: 99357030402c77048b3ee77e42566e64, type: 3}
+  - {fileID: 2101492184, guid: 99357030402c77048b3ee77e42566e64, type: 3}
+  - {fileID: 1961205275, guid: 99357030402c77048b3ee77e42566e64, type: 3}
+  - {fileID: 660299541, guid: 99357030402c77048b3ee77e42566e64, type: 3}
+  - {fileID: -1338299127, guid: 99357030402c77048b3ee77e42566e64, type: 3}
+  - {fileID: -1601038350, guid: 99357030402c77048b3ee77e42566e64, type: 3}
+  - {fileID: -59437445, guid: 99357030402c77048b3ee77e42566e64, type: 3}
+  - {fileID: -871237205, guid: 99357030402c77048b3ee77e42566e64, type: 3}
+  scene: 
+  SpriteRenderer: {fileID: 1304174952971045730}
+  animationSpeed: 5
