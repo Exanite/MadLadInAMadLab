@@ -130,7 +130,7 @@ public class FireBehaviour : MonoBehaviour
         Physics2D.OverlapCircle(transform.position, BurnRadius, default, results);
         foreach (var result in results) {
             if (result.attachedRigidbody && result.attachedRigidbody.TryGetComponent(out FireResist resistantObject)) {
-                if (resistantObject.FireResistRadius >= resistantObject.attachedRigidbody.transform.position - transform.position) {
+                if (resistantObject.FireResistRadius >= (result.attachedRigidbody.transform.position - transform.position).magnitude) {
                     Object.Destroy(this.gameObject);
                 }
             }
