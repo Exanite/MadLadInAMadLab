@@ -95,9 +95,18 @@ public class GameContext : SingletonBehaviour<GameContext>
 
         try
         {
-            var json = new FileInfo(Path.Join(Application.persistentDataPath, "save.json")).Open(FileMode.Open, FileAccess.Read).ReadAsStringAndDispose();
-            var loadedData = JsonUtility.FromJson<SaveData>(json);
-            MigrateData(loadedData, SaveData);
+            if (Application.platform == RuntimePlatform.WebGLPlayer)
+            {
+                var json = PlayerPrefs.GetString("MadLadInAMadLab_save.json");
+                var loadedData = JsonUtility.FromJson<SaveData>(json);
+                MigrateData(loadedData, SaveData);
+            }
+            else
+            {
+                var json = new FileInfo(Path.Join(Application.persistentDataPath, "save.json")).Open(FileMode.Open, FileAccess.Read).ReadAsStringAndDispose();
+                var loadedData = JsonUtility.FromJson<SaveData>(json);
+                MigrateData(loadedData, SaveData);
+            }
         }
         catch
         {
@@ -119,9 +128,16 @@ public class GameContext : SingletonBehaviour<GameContext>
 
         var json = JsonUtility.ToJson(newSave);
 
-        using var fileStream = saveFile.Open(FileMode.CreateNew, FileAccess.Write);
-        using var streamWriter = new StreamWriter(fileStream);
-        streamWriter.Write(json);
+        if (Application.platform == RuntimePlatform.WebGLPlayer)
+        {
+            PlayerPrefs.SetString("MadLadInAMadLab_save.json", json);
+        }
+        else
+        {
+            using var fileStream = saveFile.Open(FileMode.CreateNew, FileAccess.Write);
+            using var streamWriter = new StreamWriter(fileStream);
+            streamWriter.Write(json);
+        }
 
         json.Dump("Saved the game");
     }
