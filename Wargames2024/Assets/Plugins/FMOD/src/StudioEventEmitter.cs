@@ -154,6 +154,11 @@ namespace FMODUnity
 
         protected override void HandleGameEvent(EmitterGameEvent gameEvent)
         {
+            if (gameEvent == EmitterGameEvent.ObjectDestroy && !gameObject.scene.isLoaded)
+            {
+                return;
+            }
+
             if (PlayEvent == gameEvent)
             {
                 Play();
