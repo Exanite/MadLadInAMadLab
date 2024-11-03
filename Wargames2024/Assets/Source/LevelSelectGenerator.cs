@@ -26,5 +26,7 @@ public class LevelSelectGenerator : MonoBehaviour
         }
 
         var endWallPosition = EndWall.transform.position;
+        endWallPosition.x = levels.Count * SpaceBetweenTeleporters + EndWallOffset;
+        EndWall.transform.position = endWallPosition;
     }
 }
