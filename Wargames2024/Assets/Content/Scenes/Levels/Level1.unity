@@ -31614,6 +31614,25 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7650d4eac4f6783489724fbfc8c191c1, type: 3}
+--- !u!1 &1632993215 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7116423634997745395, guid: b1c66fef7628db04691a788b92145250, type: 3}
+  m_PrefabInstance: {fileID: 9071169536702765078}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1632993216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1632993215}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 838429b52303c894ca18a4b8366c49e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PotionType: Regeneration
+  level: 1
 --- !u!1 &1739685020
 GameObject:
   m_ObjectHideFlags: 0
@@ -32377,6 +32396,71 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 181d507a72b03de4089609da0238aaa2, type: 3}
+--- !u!1001 &9071169536702765078
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1485504504285117204, guid: b1c66fef7628db04691a788b92145250, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 9.54
+      objectReference: {fileID: 0}
+    - target: {fileID: 1485504504285117204, guid: b1c66fef7628db04691a788b92145250, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.52
+      objectReference: {fileID: 0}
+    - target: {fileID: 1485504504285117204, guid: b1c66fef7628db04691a788b92145250, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.009102115
+      objectReference: {fileID: 0}
+    - target: {fileID: 1485504504285117204, guid: b1c66fef7628db04691a788b92145250, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1485504504285117204, guid: b1c66fef7628db04691a788b92145250, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1485504504285117204, guid: b1c66fef7628db04691a788b92145250, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1485504504285117204, guid: b1c66fef7628db04691a788b92145250, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1485504504285117204, guid: b1c66fef7628db04691a788b92145250, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1485504504285117204, guid: b1c66fef7628db04691a788b92145250, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1485504504285117204, guid: b1c66fef7628db04691a788b92145250, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5282638716525421038, guid: b1c66fef7628db04691a788b92145250, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7116423634997745395, guid: b1c66fef7628db04691a788b92145250, type: 3}
+      propertyPath: m_Name
+      value: Small Regen Potion
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 5282638716525421038, guid: b1c66fef7628db04691a788b92145250, type: 3}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7116423634997745395, guid: b1c66fef7628db04691a788b92145250, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1632993216}
+  m_SourcePrefab: {fileID: 100100000, guid: b1c66fef7628db04691a788b92145250, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -32407,3 +32491,4 @@ SceneRoots:
   - {fileID: 3210853960236246522}
   - {fileID: 936182860}
   - {fileID: 788849267}
+  - {fileID: 9071169536702765078}
