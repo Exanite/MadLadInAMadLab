@@ -1,3 +1,4 @@
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -22,7 +23,15 @@ public class LevelSelectGenerator : MonoBehaviour
             var level = levels[i];
 
             var teleporter = Instantiate(TeleporterPrefab, position, Quaternion.identity);
-            teleporter.Initialize(true, i, level);
+
+            var isUnlocked = false;
+            var levelSaveData = GameContext.Instance.SaveData.Levels.FirstOrDefault(l => l.Index == i);
+            if (levelSaveData != null)
+            {
+                isUnlocked = levelSaveData.IsUnlocked;
+            }
+
+            teleporter.Initialize(isUnlocked, i, level);
         }
 
         var endWallPosition = EndWall.transform.position;
