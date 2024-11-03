@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 2820097153830960083}
   - component: {fileID: 5201807896406918313}
   - component: {fileID: 2252203884623117848}
-  - component: {fileID: 3752156325425460121}
   - component: {fileID: 4972542065546103272}
   m_Layer: 0
   m_Name: WoodCrate
@@ -193,18 +192,6 @@ MonoBehaviour:
   RegenPerSecond: 0
   DestroyOnDeath:
   - {fileID: 5413686579382620190}
---- !u!114 &3752156325425460121
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5413686579382620190}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4ec0fb1cc134ebc9cd3a68e9701e6c6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &4972542065546103272
 MonoBehaviour:
   m_ObjectHideFlags: 0

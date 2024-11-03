@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 3765094206552150637}
   - component: {fileID: 2820097153830960083}
   - component: {fileID: 2252203884623117848}
-  - component: {fileID: 1508125290344711000}
   - component: {fileID: 5360440515856464741}
   m_Layer: 0
   m_Name: MetalCrate
@@ -179,19 +178,6 @@ MonoBehaviour:
   RegenPerSecond: 0
   DestroyOnDeath:
   - {fileID: 5413686579382620190}
---- !u!114 &1508125290344711000
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5413686579382620190}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0834b0748bbf1fd4a94683f2fe334f97, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  FireResistRadius: 1
 --- !u!114 &5360440515856464741
 MonoBehaviour:
   m_ObjectHideFlags: 0
