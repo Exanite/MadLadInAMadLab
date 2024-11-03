@@ -18,6 +18,7 @@ public class PlayerCharacter : MonoBehaviour
 
     public float rotationSpeed = 180f;
     public float animationSpeed = 5;
+    public int[,] statusEffects = {{0,0},{0,0}};
 
     private Vector3 referenceVelocity;
 
