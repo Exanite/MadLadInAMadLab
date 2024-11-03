@@ -13,14 +13,11 @@ public class EntityHealth : MonoBehaviour
 
     public event Action Died;
 
-    private void Update()
-    {
-        if (Health <= 0)
-        {
+    private void Update() {
+        if (Health <= 0) {
             Died?.Invoke();
 
-            foreach (var o in DestroyOnDeath)
-            {
+            foreach (var o in DestroyOnDeath) {
                 Destroy(o);
             }
 

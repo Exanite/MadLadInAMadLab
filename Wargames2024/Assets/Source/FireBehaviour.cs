@@ -1,3 +1,4 @@
+using System.Numerics;
 using DG.Tweening;
 using Exanite.Core.Pooling;
 using FMODUnity;
@@ -42,8 +43,7 @@ public class FireBehaviour : MonoBehaviour
 
     private float lightIntensity;
 
-    private void Start()
-    {
+    private void Start() {
         UpdateSpreadTime();
 
         lightIntensity = Light.intensity;
@@ -52,44 +52,36 @@ public class FireBehaviour : MonoBehaviour
         AudioEmitter.SetParameter("FireIntensity", 1);
     }
 
-    private void FixedUpdate()
-    {
+    private void FixedUpdate() {
         // Burn
         using var _ = ListPool<Collider2D>.Acquire(out var results);
         Physics2D.OverlapCircle(transform.position, BurnRadius, default, results);
-        foreach (var result in results)
-        {
-            if (result.attachedRigidbody && result.attachedRigidbody.TryGetComponent(out BurnableObject burnableObject) && result.attachedRigidbody.TryGetComponent(out EntityHealth entityHealth))
-            {
+        foreach (var result in results) {
+            if (result.attachedRigidbody && result.attachedRigidbody.TryGetComponent(out BurnableObject burnableObject) && result.attachedRigidbody.TryGetComponent(out EntityHealth entityHealth)) {
                 entityHealth.Health -= burnableObject.BurningDamageMultiplier * DamagePerSecond * Time.deltaTime;
             }
         }
     }
 
-    private void Update()
-    {
+    private void Update() {
         // Spread
         spreadTimer += Time.deltaTime;
-        if (spreadTimer > nextSpreadTime)
-        {
+        if (spreadTimer > nextSpreadTime) {
             TrySpread();
             UpdateSpreadTime();
-
+            
             spreadTimer = 0;
         }
 
         // Lifetime
         timeAlive += Time.deltaTime;
-        if (timeAlive > Duration)
-        {
+        if (timeAlive > Duration) {
             Stop();
         }
     }
 
-    public void Stop()
-    {
-        if (enabled)
-        {
+    public void Stop() {
+        if (enabled) {
             DOTween.To(() => Light.intensity, value => Light.intensity = value, 0, 8);
             Collider.enabled = false;
             enabled = false;
@@ -99,26 +91,44 @@ public class FireBehaviour : MonoBehaviour
         }
     }
 
-    private void TrySpread()
-    {
-        for (var i = 0; i < SpreadTryCount; i++)
-        {
+    private void TrySpread() {
+        for (var i = 0; i < SpreadTryCount; i++) {
             var spreadRange = Random.Range(MinSpreadRange, MaxSpreadRange);
-            var spreadPosition = transform.position + (Vector3)(Random.insideUnitCircle.normalized * spreadRange);
+            var spreadPosition = transform.position + (UnityEngine.Vector3)(Random.insideUnitCircle.normalized * spreadRange);
 
-            if (Physics2D.OverlapCircle(spreadPosition, SpreadCheckRadius))
-            {
+            if (Physics2D.OverlapCircle(spreadPosition, SpreadCheckRadius))  {
                 continue;
             }
 
-            Instantiate(GameContext.Instance.FirePrefab, spreadPosition, Quaternion.identity);
+            Instantiate(GameContext.Instance.FirePrefab, spreadPosition, UnityEngine.Quaternion.identity);
 
             break;
         }
+
+        using var _ = ListPool<Collider2D>.Acquire(out var results);
+        Physics2D.OverlapCircle(transform.position, BurnRadius * 2, default, results);
+        foreach (var result in results) {
+            if (result.attachedRigidbody && result.attachedRigidbody.TryGetComponent(out BurnableObject burnableObject) && result.attachedRigidbody.TryGetComponent(out EntityHealth entityHealth)) {
+                TrySpreadAt(result.attachedRigidbody.transform.position/* - new UnityEngine.Vector3(0.5f,0.5f)*/, 10);
+            }
+        }
     }
 
-    private void UpdateSpreadTime()
-    {
+    private void TrySpreadAt(UnityEngine.Vector3 position, int fires) {
+        for (var i = 0; i < fires; i++) {
+            var spreadRange = Random.Range(0, 2);
+            var spreadPosition = position + (UnityEngine.Vector3)(Random.insideUnitCircle.normalized * spreadRange);
+
+            /*if (Physics2D.OverlapCircle(spreadPosition, SpreadCheckRadius))  {
+                continue;
+            }*/
+
+            Instantiate(GameContext.Instance.FirePrefab, spreadPosition, UnityEngine.Quaternion.identity);
+            
+            break;
+        }
+    }
+    private void UpdateSpreadTime() {
         nextSpreadTime = Random.Range(MinSpreadTime, MaxSpreadTime);
     }
 }
