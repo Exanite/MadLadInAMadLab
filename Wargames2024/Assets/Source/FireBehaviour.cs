@@ -110,7 +110,7 @@ public class FireBehaviour : MonoBehaviour
         using var _ = ListPool<Collider2D>.Acquire(out var results);
         Physics2D.OverlapCircle(transform.position, BurnRadius * 2, default, results);
         foreach (var result in results) {
-            if (result.attachedRigidbody && result.attachedRigidbody.TryGetComponent(out BurnableObject burnableObject) && result.attachedRigidbody.TryGetComponent(out EntityHealth entityHealth)  && !result.attachedRigidbody.TryGetComponent(out PlayerCharacter player)) {
+            if (result.attachedRigidbody && result.attachedRigidbody.TryGetComponent(out BurnableObject burnableObject) && result.attachedRigidbody.TryGetComponent(out EntityHealth entityHealth) && !result.attachedRigidbody.TryGetComponent(out PlayerCharacter player)) {
                 SpreadAt(result.attachedRigidbody.transform.position);
             }
         }
