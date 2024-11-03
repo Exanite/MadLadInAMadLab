@@ -1,11 +1,13 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class Door : MonoBehaviour
 {
     [Header("Dependencies")]
     public Sprite[] Sprites;
     public SpriteRenderer SpriteRenderer;
-    public Rigidbody2D rigidbody2D;
+    [FormerlySerializedAs("rigidbody2D")]
+    public Rigidbody2D Rigidbody;
     public WireNetwork Network;
 
     public float speed = 1;
@@ -23,6 +25,6 @@ public class Door : MonoBehaviour
         var index = (int)(timer * (Sprites.Length - 1));
         SpriteRenderer.sprite = Sprites[index];
 
-        rigidbody2D.simulated = index != Sprites.Length - 1;
+        Rigidbody.simulated = index != Sprites.Length - 1;
     }
 }
