@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 2252203884623117848}
   - component: {fileID: 3752156325425460121}
   - component: {fileID: 8009629718822647841}
+  - component: {fileID: -5306902543207899532}
   m_Layer: 0
   m_Name: VerticalWoodBarrier
   m_TagString: Untagged
@@ -204,6 +205,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
+--- !u!114 &-5306902543207899532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5413686579382620190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b408a94e66bc98419cbc27828ffed7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MeltDamageMultiplier: 1
 --- !u!1001 &1820871124231242427
 PrefabInstance:
   m_ObjectHideFlags: 0

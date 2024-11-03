@@ -47,7 +47,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dontDestroyOnLoad: 1
   FirePrefab: {fileID: 4273630159239241065, guid: 756f4ee0e06b3ab43b7ef42019fdc658, type: 3}
+  AcidPrefab: {fileID: 2064306007067682341, guid: d0aba1a11bef5c94883ea66d9d9cf94f, type: 3}
   GameLevelOrder: {fileID: 11400000, guid: 1966db0e9a1dcca478f4ead6d1d70b95, type: 2}
+  GameTimerStartScenes:
+  - Level1
+  GameTimerPauseScenes:
+  - LevelDev
+  - LevelSelect
 --- !u!1001 &4176449865974263736
 PrefabInstance:
   m_ObjectHideFlags: 0
