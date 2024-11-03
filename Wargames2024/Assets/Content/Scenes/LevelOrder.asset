@@ -27,13 +27,15 @@ MonoBehaviour:
     DisplayName: IntoTheFire
   - SceneName: LevelPressurePlatesAndDoors
     DisplayName: Everything in the Right Plate
+  - SceneName: LevelMassProduction
+    DisplayName: Mass Production
   - SceneName: LevelBarrellyMakingItThere
     DisplayName: Barrelly Making It There
+  - SceneName: LevelBarrellingAlley
+    DisplayName: Barrelling Alley
   - SceneName: LevelLiveWires
     DisplayName: Hot Cross Wires
   - SceneName: LevelSummoning
     DisplayName: The Power of Summoning
-  - SceneName: LevelBarrellingAlley
-    DisplayName: Barrelling Alley
   - SceneName: LevelDev
     DisplayName: The End
