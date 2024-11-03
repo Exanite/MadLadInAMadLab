@@ -5018,7 +5018,7 @@ MonoBehaviour:
   SpreadDenialRadius: 0.8
   DamageRadius: 1.25
   DamageTickTime: 0.25
-  MinSpreadTime: 3
+  MinSpreadTime: 2.75
   MaxSpreadTime: 4
 --- !u!58 &2426616383781921718
 CircleCollider2D:

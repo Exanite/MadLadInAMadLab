@@ -110,7 +110,7 @@ public class FireBehaviour : MonoBehaviour
         Physics2D.OverlapCircle(transform.position, DamageRadius, default, results2);
         foreach (var result in results2) {
             if (result.attachedRigidbody && result.attachedRigidbody.TryGetComponent(out BurnableObject _) && !result.attachedRigidbody.TryGetComponent(out PlayerCharacter _)) {
-                var spreadRange = Random.Range(0, 2);
+                var spreadRange = Random.Range(0, 3);
                 var spreadPosition = result.attachedRigidbody.transform.position + (Vector3)(Random.insideUnitCircle.normalized * spreadRange);
 
                 TrySpreadAt(spreadPosition);
