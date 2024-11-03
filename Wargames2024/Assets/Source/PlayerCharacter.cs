@@ -66,6 +66,21 @@ public class PlayerCharacter : MonoBehaviour
                 statusEffects[i,0] -= Time.deltaTime;
             }
         }
+        if (Input.GetKey(KeyCode.LeftControl) && Input.GetKey(KeyCode.LeftAlt) && Input.GetKey(KeyCode.LeftShift) && Input.GetKeyDown(KeyCode.R))
+        {
+            BlackScreenTransitionDisplay.Instance.Fade(1, BlackScreenTransitionDisplay.Instance.DeathDuration).ContinueWith(() =>
+            {
+                SceneManager.LoadScene("LevelSelect", LoadSceneMode.Single);
+            }).Forget();
+        }
+        else
+        if (Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.R))
+        {
+            BlackScreenTransitionDisplay.Instance.Fade(1, BlackScreenTransitionDisplay.Instance.DeathDuration).ContinueWith(() =>
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex, LoadSceneMode.Single);
+            }).Forget();
+        }
     }
 
     private void OnDestroy()
