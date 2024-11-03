@@ -1,6 +1,7 @@
 using System;
 using Exanite.Core.Pooling;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class Spawner : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class Spawner : MonoBehaviour
     public GameObject Prefab;
     public WireNetwork Network;
     public float SpawnCheckRadius = 0.75f;
+    public float MinRotation = 0;
+    public float MaxRotation = 0;
 
     [Header("Animation")]
     public int animationSpeed = 5;
@@ -56,6 +59,6 @@ public class Spawner : MonoBehaviour
             }
         }
 
-        Instantiate(Prefab, transform.position, Quaternion.identity);
+        Instantiate(Prefab, transform.position, Quaternion.Euler(0, 0, Random.Range(MinRotation, MaxRotation)));
     }
 }
