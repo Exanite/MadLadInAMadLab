@@ -126,18 +126,36 @@ public class FireBehaviour : MonoBehaviour
             useTriggers = true,
         }, hits);
 
+        foreach (var hit in hits)
+        {
+            if (hit.collider.isTrigger)
+            {
+                if (hit.collider.TryGetComponent(out FireResist _))
+                {
+                    return;
+                }
+
+                continue;
+            }
+
+            if (!hit.collider.TryGetComponent(out BurnableObject _))
+            {
+                return;
+            }
+
+            if (!(hit.collider.attachedRigidbody && hit.collider.attachedRigidbody.TryGetComponent(out BurnableObject _)))
+            {
+                return;
+            }
+        }
+
         using var __ = ListPool<Collider2D>.Acquire(out var colliders);
         Physics2D.OverlapCircle(position, SpreadDenialRadius, new ContactFilter2D()
         {
             useTriggers = true,
         }, colliders);
 
-        foreach (var hit in hits)
-        {
-            colliders.Add(hit.collider);
-        }
-
-        var isSpreadBlocked = colliders.Any(static (c) =>
+        var isSpreadBlocked = colliders.Any((c) =>
         {
             if (c.TryGetComponent(out FireResist _))
             {
