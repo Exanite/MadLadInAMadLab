@@ -1431,9 +1431,9 @@ PrefabInstance:
       propertyPath: m_text
       value: 'Credits:
 
-        Luke Gorman
+        Luke
 
-        William Chen'
+        William'
       objectReference: {fileID: 0}
     - target: {fileID: 1850070431703422959, guid: c7fbd17bba1a2c24ca20ab6b745d120b, type: 3}
       propertyPath: m_Name
