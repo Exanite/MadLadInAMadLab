@@ -24,7 +24,7 @@ EditorBuildSettings:
     path: Assets/Content/Scenes/Levels/LevelSummoning.unity
     guid: dc55e4bcc0315574bb52834070c39a83
   - enabled: 1
-    path: Assets/Content/Scenes/Levels/LevelTwoPressurePlates.unity
+    path: Assets/Content/Scenes/Levels/LevelPressurePlatesAndDoors.unity
     guid: 43307fe4add505c4ba83070f9d081691
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 467cb74b20c92f74890a57ce5a31574f, type: 3}
