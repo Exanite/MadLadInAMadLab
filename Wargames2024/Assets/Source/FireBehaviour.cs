@@ -174,6 +174,10 @@ public class FireBehaviour : MonoBehaviour
         FireBehaviour newFire = Instantiate(GameContext.Instance.FirePrefab, position, Quaternion.identity);
         newFire.MaxSpreadRange = MaxSpreadRange;
         newFire.MinSpreadRange = MinSpreadRange;
+        newFire.SpreadTryCount = SpreadTryCount;
+        newFire.MinSpreadTime = MinSpreadTime;
+        newFire.MaxSpreadTime = MaxSpreadTime;
+        newFire.Duration = Duration;
     }
 
     private void UpdateSpreadTime() {
