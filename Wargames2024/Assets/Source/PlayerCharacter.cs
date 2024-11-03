@@ -11,6 +11,9 @@ public class PlayerCharacter : MonoBehaviour
     public Rigidbody2D Rigidbody;
     public EntityHealth Health;
     public GameObject Sprite;
+    public SpriteRenderer regenIcon;
+    public SpriteRenderer resistIcon;
+
     public Sprite[] Animation;
     public SpriteRenderer SpriteRenderer;
     public float MovementSpeed = 10;
@@ -18,7 +21,7 @@ public class PlayerCharacter : MonoBehaviour
 
     public float rotationSpeed = 180f;
     public float animationSpeed = 5;
-    public int[,] statusEffects = {{0,0},{0,0}};
+    public float[,] statusEffects = {{0,0},{0,0}};
 
     private Vector3 referenceVelocity;
 
@@ -56,6 +59,13 @@ public class PlayerCharacter : MonoBehaviour
             frame = 0;
         }
         SpriteRenderer.sprite = Animation[(int) frame];
+        for (int i = 0; i < 2; i++) {
+            if (statusEffects[i,0] < 0) {
+                statusEffects[i,0] = 0;
+            } else if (statusEffects[i,0] > 0) {
+                statusEffects[i,0] -= Time.deltaTime;
+            }
+        }
     }
 
     private void OnDestroy()
