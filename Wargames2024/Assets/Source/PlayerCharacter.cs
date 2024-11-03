@@ -1,8 +1,10 @@
 using Cysharp.Threading.Tasks;
+using Microsoft.Unity.VisualStudio.Editor;
 using Source.UserInterface;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerCharacter : MonoBehaviour
 {
@@ -11,8 +13,8 @@ public class PlayerCharacter : MonoBehaviour
     public Rigidbody2D Rigidbody;
     public EntityHealth Health;
     public GameObject Sprite;
-    public SpriteRenderer regenIcon;
-    public SpriteRenderer resistIcon;
+    public UnityEngine.UI.Image regenIcon;
+    public UnityEngine.UI.Image resistIcon;
 
     public Sprite[] Animation;
     public SpriteRenderer SpriteRenderer;
@@ -60,10 +62,21 @@ public class PlayerCharacter : MonoBehaviour
         }
         SpriteRenderer.sprite = Animation[(int) frame];
         for (int i = 0; i < 2; i++) {
-            if (statusEffects[i,0] < 0) {
+            if (statusEffects[i,0] <= 0) {
                 statusEffects[i,0] = 0;
+                if (i == 0) {
+                   regenIcon.enabled = false;
+                } else if (i == 1) {
+                    resistIcon.enabled = false;
+                }
             } else if (statusEffects[i,0] > 0) {
                 statusEffects[i,0] -= Time.deltaTime;
+                if (i == 0) {
+                    regenIcon.enabled = true;
+                    Health.Health += statusEffects[i,1] * Time.deltaTime;
+                } else if (i == 1) {
+                    resistIcon.enabled = true;
+                }
             }
         }
         if (Input.GetKey(KeyCode.LeftControl) && Input.GetKey(KeyCode.LeftShift) && Input.GetKeyDown(KeyCode.R))

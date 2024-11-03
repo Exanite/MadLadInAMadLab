@@ -59,6 +59,9 @@ public class FireBehaviour : MonoBehaviour
         Physics2D.OverlapCircle(transform.position, BurnRadius, default, results);
         foreach (var result in results) {
             if (result.attachedRigidbody && result.attachedRigidbody.TryGetComponent(out BurnableObject burnableObject) && result.attachedRigidbody.TryGetComponent(out EntityHealth entityHealth)) {
+                if (result.attachedRigidbody.TryGetComponent(out PlayerCharacter player) && player.statusEffects[1,0] > 0) { 
+                    continue;
+                }
                 entityHealth.Health -= burnableObject.BurningDamageMultiplier * DamagePerSecond * Time.deltaTime;
             }
         }
