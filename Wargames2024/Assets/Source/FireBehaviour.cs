@@ -100,11 +100,7 @@ public class FireBehaviour : MonoBehaviour
             var spreadRange = Random.Range(MinSpreadRange, MaxSpreadRange);
             var spreadPosition = transform.position + (Vector3)(Random.insideUnitCircle.normalized * spreadRange);
 
-            if (Physics2D.OverlapCircle(spreadPosition, SpreadCheckRadius))  {
-                continue;
-            }
-
-            Instantiate(GameContext.Instance.FirePrefab, spreadPosition, Quaternion.identity);
+            SpreadAt(spreadPosition);
 
             break;
         }
@@ -124,7 +120,10 @@ public class FireBehaviour : MonoBehaviour
     private void SpreadAt(Vector3 position)
     {
         using var _ = ListPool<RaycastHit2D>.Acquire(out var results);
-        Physics2D.Linecast(transform.position, position, default, results);
+        Physics2D.Linecast(transform.position, position, new ContactFilter2D()
+        {
+            useTriggers = false,
+        }, results);
 
         foreach (var hit in results)
         {
