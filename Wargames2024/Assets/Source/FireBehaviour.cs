@@ -123,16 +123,8 @@ public class FireBehaviour : MonoBehaviour
         using var _ = ListPool<RaycastHit2D>.Acquire(out var hits);
         Physics2D.Linecast(transform.position, position, new ContactFilter2D()
         {
-            useTriggers = false,
+            useTriggers = true,
         }, hits);
-
-        foreach (var hit in hits)
-        {
-            if (!hit.collider.TryGetComponent(out BurnableObject _) || !(hit.collider.attachedRigidbody && hit.collider.attachedRigidbody.TryGetComponent(out BurnableObject _)))
-            {
-                return;
-            }
-        }
 
         using var __ = ListPool<Collider2D>.Acquire(out var colliders);
         Physics2D.OverlapCircle(position, SpreadDenialRadius, new ContactFilter2D()
@@ -140,8 +132,18 @@ public class FireBehaviour : MonoBehaviour
             useTriggers = true,
         }, colliders);
 
+        foreach (var hit in hits)
+        {
+            colliders.Add(hit.collider);
+        }
+
         var isSpreadBlocked = colliders.Any(static (c) =>
         {
+            if (c.TryGetComponent(out FireResist _))
+            {
+                return true;
+            }
+
             if (c.TryGetComponent(out FireBehaviour _))
             {
                 return true;
