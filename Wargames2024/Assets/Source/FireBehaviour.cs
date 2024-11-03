@@ -114,7 +114,7 @@ public class FireBehaviour : MonoBehaviour
                 var spreadRange = Random.Range(0, 2);
                 var spreadPosition = result.attachedRigidbody.transform.position + (Vector3)(Random.insideUnitCircle.normalized * spreadRange);
 
-                TrySpreadAt(spreadPosition.Dump());
+                TrySpreadAt(spreadPosition);
             }
         }
     }
