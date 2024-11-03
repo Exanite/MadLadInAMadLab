@@ -82,6 +82,7 @@ public class PlayerCharacter : MonoBehaviour
         {
             if (!IsTransitioning)
             {
+                GameContext.Instance.IsLevelTimerPaused = true;
                 BlackScreenTransitionDisplay.Instance.Fade(1, BlackScreenTransitionDisplay.Instance.DeathDuration).ContinueWith(() =>
                 {
                     SceneManager.LoadScene("LevelSelect", LoadSceneMode.Single);
@@ -96,6 +97,7 @@ public class PlayerCharacter : MonoBehaviour
         {
             if (!IsTransitioning)
             {
+                GameContext.Instance.IsLevelTimerPaused = true;
                 BlackScreenTransitionDisplay.Instance.Fade(1, BlackScreenTransitionDisplay.Instance.DeathDuration).ContinueWith(() =>
                 {
                     SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex, LoadSceneMode.Single);
@@ -114,6 +116,7 @@ public class PlayerCharacter : MonoBehaviour
             return;
         }
 
+        GameContext.Instance.IsLevelTimerPaused = true;
         BlackScreenTransitionDisplay.Instance.Fade(1, BlackScreenTransitionDisplay.Instance.DeathDuration).ContinueWith(() =>
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex, LoadSceneMode.Single);

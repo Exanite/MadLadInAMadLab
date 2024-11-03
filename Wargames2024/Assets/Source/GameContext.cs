@@ -13,18 +13,25 @@ public class GameContext : SingletonBehaviour<GameContext>
     public FireBehaviour FirePrefab;
     public GameLevelOrder GameLevelOrder;
 
-    [NonSerialized]
-    public PlayerCharacter Player;
+    [NonSerialized] public PlayerCharacter Player;
 
-    [NonSerialized]
-    public SaveData SaveData;
+    [NonSerialized] public SaveData SaveData;
+
+    [NonSerialized] public float GameTimer;
+    [NonSerialized] public bool IsGameTimerPaused;
+
+    [NonSerialized] public float LevelTimer;
+    [NonSerialized] public bool IsLevelTimerPaused;
+
+    public List<string> GameTimerStartScenes = new List<string>() { "Level1" };
+    public List<string> GameTimerPauseScenes = new List<string>() { "LevelDev", "LevelSelect" };
 
     protected override void OnEnable()
     {
         base.OnEnable();
 
         Load();
-        UnlockCurrentLevel();
+        OnLevelLoaded();
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
@@ -33,14 +40,45 @@ public class GameContext : SingletonBehaviour<GameContext>
         SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 
-    private void OnSceneLoaded(Scene scene, LoadSceneMode loadSceneMode)
+    private void Update()
     {
-        UnlockCurrentLevel();
+        if (!IsGameTimerPaused)
+        {
+            GameTimer += Time.deltaTime;
+        }
+
+        if (!IsLevelTimerPaused)
+        {
+            LevelTimer += Time.deltaTime;
+        }
     }
 
-    public void UnlockCurrentLevel()
+    private void OnSceneLoaded(Scene scene, LoadSceneMode loadSceneMode)
+    {
+        OnLevelLoaded();
+    }
+
+    public void OnLevelLoaded()
     {
         var currentLevel = GameLevelOrder.GetCurrentLevelInfo();
+
+        // Level timer
+        LevelTimer = 0;
+        IsLevelTimerPaused = false;
+
+        // Game timer
+        if (GameTimerStartScenes.Contains(currentLevel.Info.SceneName))
+        {
+            GameTimer = 0;
+            IsGameTimerPaused = false;
+        }
+
+        if (GameTimerPauseScenes.Contains(currentLevel.Info.SceneName))
+        {
+            IsGameTimerPaused = true;
+        }
+
+        // Unlock current level
         var level = SaveData.Levels.FirstOrDefault(l => l.Index == currentLevel.Index);
         if (level != null)
         {

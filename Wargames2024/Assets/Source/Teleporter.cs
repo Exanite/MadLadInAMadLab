@@ -66,6 +66,7 @@ public class Teleporter : MonoBehaviour
 
     private static void LoadScene(string sceneName)
     {
+        GameContext.Instance.IsLevelTimerPaused = true;
         BlackScreenTransitionDisplay.Instance.Fade(1, BlackScreenTransitionDisplay.Instance.TeleportDuration).ContinueWith(() =>
         {
             SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
