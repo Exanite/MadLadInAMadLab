@@ -5103,6 +5103,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6222658841520593328, guid: fdc37c0a6f8a8744bae643999f3208d4, type: 3}
+      propertyPath: m_Intensity
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6222658841520593328, guid: fdc37c0a6f8a8744bae643999f3208d4, type: 3}
+      propertyPath: m_FalloffIntensity
+      value: 0.87
+      objectReference: {fileID: 0}
+    - target: {fileID: 6222658841520593328, guid: fdc37c0a6f8a8744bae643999f3208d4, type: 3}
+      propertyPath: m_PointLightOuterRadius
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6754296994048529789, guid: fdc37c0a6f8a8744bae643999f3208d4, type: 3}
       propertyPath: m_Name
       value: AcidLight
