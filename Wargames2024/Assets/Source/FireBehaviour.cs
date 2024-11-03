@@ -1,7 +1,6 @@
 using System.Linq;
 using DG.Tweening;
 using Exanite.Core.Pooling;
-using Exanite.Core.Utilities;
 using FMODUnity;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
