@@ -5,10 +5,9 @@ using UnityEngine;
 public class AcidBarrel : MonoBehaviour {
     public Rigidbody2D Rigidbody;
     private Vector2 prevVelocity;
+    public float threshold = 0.01f;
     void Update() {
-        print("velocity: " + Math.Abs((prevVelocity - Rigidbody.velocity).magnitude * Time.deltaTime));
-
-        if (Math.Abs((prevVelocity - Rigidbody.velocity).magnitude) * Time.deltaTime > 0.01) {
+        if (Math.Abs((prevVelocity - Rigidbody.velocity).magnitude) * Time.deltaTime > threshold) {
             Instantiate(GameContext.Instance.AcidPrefab, transform.position, Quaternion.identity);
         }
         prevVelocity = Rigidbody.velocity;
