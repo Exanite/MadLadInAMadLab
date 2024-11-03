@@ -13,29 +13,29 @@ MonoBehaviour:
   m_Name: LevelOrder
   m_EditorClassIdentifier: 
   Levels:
-  - SceneName: LevelSelect
-    DisplayName: Level Select
-  - SceneName: Level1
-    DisplayName: Tutorial
-  - SceneName: Level2
-    DisplayName: The Crate Escape
-  - SceneName: Level3
-    DisplayName: Crate Your Own Path
-  - SceneName: LevelBarrellyHoldingOn
-    DisplayName: Barrelly Holding On
-  - SceneName: LevelIntoTheFire
-    DisplayName: IntoTheFire
-  - SceneName: LevelPressurePlatesAndDoors
-    DisplayName: Everything in the Right Plate
-  - SceneName: LevelMassProduction
-    DisplayName: Mass Production
-  - SceneName: LevelBarrellyMakingItThere
-    DisplayName: Barrelly Making It There
-  - SceneName: LevelBarrellingAlley
-    DisplayName: Barrelling Alley
-  - SceneName: LevelLiveWires
-    DisplayName: Hot Cross Wires
-  - SceneName: LevelSummoning
-    DisplayName: The Power of Summoning
-  - SceneName: LevelDev
-    DisplayName: The End
+  - DisplayName: Level Select
+    SceneName: LevelSelect
+  - DisplayName: Tutorial
+    SceneName: Level1
+  - DisplayName: The Crate Escape
+    SceneName: Level2
+  - DisplayName: Crate Your Own Path
+    SceneName: Level3
+  - DisplayName: Barrelly Holding On
+    SceneName: LevelBarrellyHoldingOn
+  - DisplayName: IntoTheFire
+    SceneName: LevelIntoTheFire
+  - DisplayName: Everything in the Right Plate
+    SceneName: LevelPressurePlatesAndDoors
+  - DisplayName: Mass Production
+    SceneName: LevelMassProduction
+  - DisplayName: Barrelly Making It There
+    SceneName: LevelBarrellyMakingItThere
+  - DisplayName: Barrelling Alley
+    SceneName: LevelBarrellingAlley
+  - DisplayName: Hot Cross Wires
+    SceneName: LevelLiveWires
+  - DisplayName: The Power of Summoning
+    SceneName: LevelSummoning
+  - DisplayName: The End
+    SceneName: LevelDev
