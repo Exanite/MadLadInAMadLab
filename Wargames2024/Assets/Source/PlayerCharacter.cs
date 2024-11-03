@@ -103,7 +103,7 @@ public class PlayerCharacter : MonoBehaviour
             }
         }
 
-        if (Input.GetKey(KeyCode.LeftControl) && Input.GetKey(KeyCode.LeftShift) && Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.L))
         {
             if (!IsTransitioning)
             {
@@ -119,7 +119,7 @@ public class PlayerCharacter : MonoBehaviour
 
             IsTransitioning = true;
         }
-        else if (Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.R))
+        else if (Input.GetKeyDown(KeyCode.R))
         {
             if (!IsTransitioning)
             {

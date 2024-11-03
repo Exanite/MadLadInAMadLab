@@ -1123,9 +1123,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Ctrl+R to Restart Level
+  m_text: 'R to Restart Level
 
-    Ctrl+Shift+R to go to Level Select'
+    L to go to Level Select'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5e18a1877bfc00d4e8efeb166dda8866, type: 2}
   m_sharedMaterial: {fileID: 8188134991044705062, guid: 5e18a1877bfc00d4e8efeb166dda8866, type: 2}
