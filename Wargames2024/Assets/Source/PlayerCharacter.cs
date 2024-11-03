@@ -19,7 +19,10 @@ public class PlayerCharacter : MonoBehaviour
 
     public float rotationSpeed = 180f;
     public float animationSpeed = 5;
-    public float[,] statusEffects = {{0,0},{0,0}};
+
+    // 0 is regen
+    // 1 is fire
+    public float[,] statusEffects = { { 0, 0 }, { 0, 0 } };
 
     private Vector3 referenceVelocity;
 
@@ -28,81 +31,106 @@ public class PlayerCharacter : MonoBehaviour
 
     private static bool IsTransitioning = false;
 
-    private void OnEnable() {
+    private void OnEnable()
+    {
         gameContext = GameContext.Instance;
         gameContext.Player = this;
         IsTransitioning = false;
     }
 
-    private void OnDisable() {
-        if (gameContext.Player == this)  {
+    private void OnDisable()
+    {
+        if (gameContext.Player == this)
+        {
             gameContext.Player = null;
         }
     }
 
-    private void Update() {
+    private void Update()
+    {
         var targetVelocity = MovementInput.action.ReadValue<Vector2>();
         targetVelocity *= MovementSpeed;
         Rigidbody.velocity = Vector3.SmoothDamp(Rigidbody.velocity, targetVelocity, ref referenceVelocity, MovementSmoothTime);
 
-        if (targetVelocity != Vector2.zero) {
+        if (targetVelocity != Vector2.zero)
+        {
             var angleDegrees = Mathf.Atan2(targetVelocity.y, targetVelocity.x) * Mathf.Rad2Deg;
             var targetRotation = Quaternion.Euler(0, 0, angleDegrees);
 
             Sprite.transform.rotation = Quaternion.Slerp(targetRotation, Sprite.transform.rotation, Mathf.Pow(0.5f, rotationSpeed * Time.deltaTime));
             frame += Time.deltaTime * animationSpeed;
-            if (frame >= 3) {
-                frame = 0.5f;
-            } else if (frame <= 0.5) {
+            if (frame >= 3)
+            {
                 frame = 0.5f;
             }
-        } else {
+            else if (frame <= 0.5)
+            {
+                frame = 0.5f;
+            }
+        }
+        else
+        {
             frame = 0;
         }
-        SpriteRenderer.sprite = Animation[(int) frame];
-        for (int i = 0; i < 2; i++) {
-            if (statusEffects[i,0] <= 0) {
-                statusEffects[i,0] = 0;
-                if (i == 0) {
+
+        SpriteRenderer.sprite = Animation[(int)frame];
+        for (var i = 0; i < 2; i++)
+        {
+            if (statusEffects[i, 0] <= 0)
+            {
+                statusEffects[i, 0] = 0;
+                if (i == 0)
+                {
                     UiContext.Instance.regenIcon.enabled = false;
-                } else if (i == 1) {
+                }
+                else if (i == 1)
+                {
                     UiContext.Instance.resistIcon.enabled = false;
                 }
-            } else if (statusEffects[i,0] > 0) {
-                statusEffects[i,0] -= Time.deltaTime;
-                if (i == 0) {
+            }
+            else if (statusEffects[i, 0] > 0)
+            {
+                statusEffects[i, 0] -= Time.deltaTime;
+                if (i == 0)
+                {
                     UiContext.Instance.regenIcon.enabled = true;
-                    Health.Health += statusEffects[i,1] * Time.deltaTime;
-                } else if (i == 1) {
+                    Health.Health += statusEffects[i, 1] * Time.deltaTime;
+                }
+                else if (i == 1)
+                {
                     UiContext.Instance.resistIcon.enabled = true;
                 }
             }
         }
+
         if (Input.GetKey(KeyCode.LeftControl) && Input.GetKey(KeyCode.LeftShift) && Input.GetKeyDown(KeyCode.R))
         {
             if (!IsTransitioning)
             {
                 GameContext.Instance.IsLevelTimerPaused = true;
-                BlackScreenTransitionDisplay.Instance.Fade(1, BlackScreenTransitionDisplay.Instance.DeathDuration).ContinueWith(() =>
-                {
-                    SceneManager.LoadScene("LevelSelect", LoadSceneMode.Single);
-                    IsTransitioning = false;
-                }).Forget();
+                BlackScreenTransitionDisplay.Instance.Fade(1, BlackScreenTransitionDisplay.Instance.DeathDuration)
+                    .ContinueWith(() =>
+                    {
+                        SceneManager.LoadScene("LevelSelect", LoadSceneMode.Single);
+                        IsTransitioning = false;
+                    })
+                    .Forget();
             }
 
             IsTransitioning = true;
         }
-        else
-        if (Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.R))
+        else if (Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.R))
         {
             if (!IsTransitioning)
             {
                 GameContext.Instance.IsLevelTimerPaused = true;
-                BlackScreenTransitionDisplay.Instance.Fade(1, BlackScreenTransitionDisplay.Instance.DeathDuration).ContinueWith(() =>
-                {
-                    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex, LoadSceneMode.Single);
-                    IsTransitioning = false;
-                }).Forget();
+                BlackScreenTransitionDisplay.Instance.Fade(1, BlackScreenTransitionDisplay.Instance.DeathDuration)
+                    .ContinueWith(() =>
+                    {
+                        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex, LoadSceneMode.Single);
+                        IsTransitioning = false;
+                    })
+                    .Forget();
             }
 
             IsTransitioning = true;
@@ -117,9 +145,11 @@ public class PlayerCharacter : MonoBehaviour
         }
 
         GameContext.Instance.IsLevelTimerPaused = true;
-        BlackScreenTransitionDisplay.Instance.Fade(1, BlackScreenTransitionDisplay.Instance.DeathDuration).ContinueWith(() =>
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex, LoadSceneMode.Single);
-        }).Forget();
+        BlackScreenTransitionDisplay.Instance.Fade(1, BlackScreenTransitionDisplay.Instance.DeathDuration)
+            .ContinueWith(() =>
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex, LoadSceneMode.Single);
+            })
+            .Forget();
     }
 }
