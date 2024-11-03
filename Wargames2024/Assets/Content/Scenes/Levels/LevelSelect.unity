@@ -30564,17 +30564,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7650d4eac4f6783489724fbfc8c191c1, type: 3}
---- !u!114 &1399600145 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 300750865478880594, guid: c7e481f921acfb94ca914d71f8f50748, type: 3}
+--- !u!4 &1399600146 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7836614440800489265, guid: c7e481f921acfb94ca914d71f8f50748, type: 3}
   m_PrefabInstance: {fileID: 7564920211196439860}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4473b09c0cb64728bca4bb1705e9af69, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1422552828
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -30872,9 +30866,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 291998444}
     - target: {fileID: 4187460766405595154, guid: 2cf6485e7b685d74bbd351bbb72760bc, type: 3}
-      propertyPath: Teleporter
+      propertyPath: EndWallOffset
+      value: -6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4187460766405595154, guid: 2cf6485e7b685d74bbd351bbb72760bc, type: 3}
+      propertyPath: FirstTeleporterPosition
       value: 
-      objectReference: {fileID: 1399600145}
+      objectReference: {fileID: 1399600146}
+    - target: {fileID: 4187460766405595154, guid: 2cf6485e7b685d74bbd351bbb72760bc, type: 3}
+      propertyPath: SpaceBetweenTeleporters
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -30996,10 +30998,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8533812931885124911, guid: c7e481f921acfb94ca914d71f8f50748, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c7e481f921acfb94ca914d71f8f50748, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

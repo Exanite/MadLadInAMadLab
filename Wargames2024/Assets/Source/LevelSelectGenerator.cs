@@ -18,7 +18,7 @@ public class LevelSelectGenerator : MonoBehaviour
         // Skip 0 because 0 is level select
         for (var i = 1; i < levels.Count; i++)
         {
-            var position = FirstTeleporterPosition.transform.position + i * SpaceBetweenTeleporters * Vector3.right;
+            var position = FirstTeleporterPosition.transform.position + (i - 1) * SpaceBetweenTeleporters * Vector3.right;
             var level = levels[i];
 
             var teleporter = Instantiate(TeleporterPrefab, position, Quaternion.identity);

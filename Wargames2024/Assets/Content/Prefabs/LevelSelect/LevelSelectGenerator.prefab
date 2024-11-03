@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EndWall: {fileID: 0}
-  Teleporter: {fileID: 0}
-  FirstTeleporterPosition: {fileID: 7836614440800489265, guid: c7e481f921acfb94ca914d71f8f50748, type: 3}
+  TeleporterPrefab: {fileID: 300750865478880594, guid: c7e481f921acfb94ca914d71f8f50748, type: 3}
+  FirstTeleporterPosition: {fileID: 0}
   EndWallOffset: 10
   SpaceBetweenTeleporters: 10
