@@ -107,10 +107,10 @@ public class FireBehaviour : MonoBehaviour
         }
 
         using var _ = ListPool<Collider2D>.Acquire(out var results2);
-        Physics2D.OverlapCircle(transform.position, DamageRadius, default, results2);
+        Physics2D.OverlapCircle(transform.position, DamageRadius * 2, default, results2);
         foreach (var result in results2) {
             if (result.attachedRigidbody && result.attachedRigidbody.TryGetComponent(out BurnableObject _) && !result.attachedRigidbody.TryGetComponent(out PlayerCharacter _)) {
-                var spreadRange = Random.Range(0, 3);
+                var spreadRange = Random.Range(0, 2);
                 var spreadPosition = result.attachedRigidbody.transform.position + (Vector3)(Random.insideUnitCircle.normalized * spreadRange);
 
                 TrySpreadAt(spreadPosition);
@@ -118,74 +118,62 @@ public class FireBehaviour : MonoBehaviour
         }
     }
 
-    private void TrySpreadAt(Vector3 position)
-    {
+    private void TrySpreadAt(Vector3 position){
         using var _ = ListPool<RaycastHit2D>.Acquire(out var hits);
-        Physics2D.Linecast(transform.position, position, new ContactFilter2D()
-        {
+        Physics2D.Linecast(transform.position, position, new ContactFilter2D()  {
             useTriggers = true,
         }, hits);
 
-        foreach (var hit in hits)
-        {
-            if (hit.collider.isTrigger)
-            {
-                if (hit.collider.TryGetComponent(out FireResist _))
-                {
+        foreach (var hit in hits) {
+            if (hit.collider.isTrigger) {
+                if (hit.collider.TryGetComponent(out FireResist _)) {
                     return;
                 }
 
                 continue;
             }
 
-            if (!hit.collider.TryGetComponent(out BurnableObject _))
-            {
+            if (!hit.collider.TryGetComponent(out BurnableObject _)) {
                 return;
             }
 
-            if (!(hit.collider.attachedRigidbody && hit.collider.attachedRigidbody.TryGetComponent(out BurnableObject _)))
-            {
+            if (!(hit.collider.attachedRigidbody && hit.collider.attachedRigidbody.TryGetComponent(out BurnableObject _))) {
                 return;
             }
         }
 
         using var __ = ListPool<Collider2D>.Acquire(out var colliders);
-        Physics2D.OverlapCircle(position, SpreadDenialRadius, new ContactFilter2D()
-        {
+        Physics2D.OverlapCircle(position, SpreadDenialRadius, new ContactFilter2D() {
             useTriggers = true,
         }, colliders);
 
-        var isSpreadBlocked = colliders.Any((c) =>
-        {
-            if (c.TryGetComponent(out FireResist _))
-            {
+        var isSpreadBlocked = colliders.Any((c) => {
+            if (c.TryGetComponent(out FireResist _)) {
                 return true;
             }
 
-            if (c.TryGetComponent(out FireBehaviour _))
-            {
+            if (c.TryGetComponent(out FireBehaviour _)) {
                 return true;
             }
 
-            if (c.TryGetComponent(out BurnableObject _) || (c.attachedRigidbody && c.attachedRigidbody.TryGetComponent(out BurnableObject _)))
-            {
+            if (c.TryGetComponent(out BurnableObject _) || (c.attachedRigidbody && c.attachedRigidbody.TryGetComponent(out BurnableObject _))) {
                 return false;
             }
 
-            if (c.isTrigger)
-            {
+            if (c.isTrigger) {
                 return false;
             }
 
             return true;
         });
 
-        if (isSpreadBlocked)
-        {
+        if (isSpreadBlocked){
             return;
         }
 
-        Instantiate(GameContext.Instance.FirePrefab, position, Quaternion.identity);
+        FireBehaviour newFire = Instantiate(GameContext.Instance.FirePrefab, position, Quaternion.identity);
+        newFire.MaxSpreadRange = MaxSpreadRange;
+        newFire.MinSpreadRange = MinSpreadRange;
     }
 
     private void UpdateSpreadTime() {
