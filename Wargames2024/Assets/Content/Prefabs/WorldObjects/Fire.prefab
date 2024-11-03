@@ -4921,7 +4921,7 @@ Transform:
   m_GameObject: {fileID: 6851342700990841121}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.41, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5010,14 +5010,14 @@ MonoBehaviour:
   Collider: {fileID: 2426616383781921718}
   Light: {fileID: 2674729318107653009}
   AudioEmitter: {fileID: 924542851866359073}
-  DamagePerSecond: 10
+  DamagePerSecond: 25
   Duration: 100
   MinSpreadRange: 1
   MaxSpreadRange: 2
   SpreadTryCount: 5
-  SpreadCheckRadius: 0.75
-  BurnRadius: 1.5
-  BurnTickTime: 0.25
+  SpreadDenialRadius: 0.8
+  DamageRadius: 1
+  DamageTickTime: 0.25
   MinSpreadTime: 3
   MaxSpreadTime: 4
 --- !u!58 &2426616383781921718
