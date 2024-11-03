@@ -41,5 +41,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Content/Scenes/Levels/LevelMassProduction.unity
     guid: 7c5930c49b900e9458d38c51e30f2b1e
+  - enabled: 1
+    path: Assets/Content/Scenes/Levels/LevelRace.unity
+    guid: 9d34e0332fa132442b45a83e902335ef
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 467cb74b20c92f74890a57ce5a31574f, type: 3}
