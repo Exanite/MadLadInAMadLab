@@ -25,6 +25,6 @@ public class LevelNameDisplay : MonoBehaviour
     private void UpdateText()
     {
         var currentScene = GameContext.Instance.GameLevelOrder.GetCurrentLevelInfo();
-        Text.text = $"Level {currentScene.Index + 1} - {currentScene.Info.DisplayName}";
+        Text.text = $"Level {currentScene.Index} - {currentScene.Info.DisplayName}";
     }
 }

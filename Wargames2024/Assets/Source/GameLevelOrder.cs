@@ -19,11 +19,4 @@ public class GameLevelOrder : ScriptableObject
 
         return (currentSceneIndex, Levels[currentSceneIndex]);
     }
-
-    [Serializable]
-    public struct LevelInfo
-    {
-        public string SceneName;
-        public string DisplayName;
-    }
 }
