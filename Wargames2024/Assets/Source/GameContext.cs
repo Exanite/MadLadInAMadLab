@@ -11,6 +11,7 @@ public class GameContext : SingletonBehaviour<GameContext>
 {
     [Header("Dependencies")]
     public FireBehaviour FirePrefab;
+    public AcidBehavior AcidPrefab;
     public GameLevelOrder GameLevelOrder;
 
     [NonSerialized] public PlayerCharacter Player;
