@@ -151,5 +151,7 @@ public class PlayerCharacter : MonoBehaviour
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex, LoadSceneMode.Single);
             })
             .Forget();
+
+        IsTransitioning = true;
     }
 }
