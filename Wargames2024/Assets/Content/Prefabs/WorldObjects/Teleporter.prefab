@@ -239,7 +239,7 @@ MonoBehaviour:
   - {fileID: -1165738344, guid: 99357030402c77048b3ee77e42566e64, type: 3}
   - {fileID: -1297157643, guid: 99357030402c77048b3ee77e42566e64, type: 3}
   - {fileID: 712803496, guid: 99357030402c77048b3ee77e42566e64, type: 3}
-  scene: 
+  scene: MainTestingScene
   SpriteRenderer: {fileID: 5987855861182604130}
   animationSpeed: 5
 --- !u!1 &6913092329230588534

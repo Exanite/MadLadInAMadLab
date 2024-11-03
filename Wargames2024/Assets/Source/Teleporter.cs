@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 public class Teleporter : MonoBehaviour{
     [Header("Dependencies")]
     public Sprite[] Sprites;
-    public String scene;
+    public String scene = "MainTestingScene";
     public SpriteRenderer SpriteRenderer;
     public int animationSpeed = 5;
     float i = 0;
