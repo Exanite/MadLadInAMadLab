@@ -5011,12 +5011,12 @@ MonoBehaviour:
   Light: {fileID: 2674729318107653009}
   AudioEmitter: {fileID: 924542851866359073}
   DamagePerSecond: 25
-  Duration: 10
+  Duration: 15
   MinSpreadRange: 1
   MaxSpreadRange: 2
   SpreadTryCount: 3
   SpreadDenialRadius: 0.8
-  DamageRadius: 1
+  DamageRadius: 1.25
   DamageTickTime: 0.25
   MinSpreadTime: 3
   MaxSpreadTime: 4
