@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 5201807896406918313}
   - component: {fileID: 2252203884623117848}
   - component: {fileID: 4972542065546103272}
+  - component: {fileID: 6114040138818480108}
   m_Layer: 0
   m_Name: WoodCrate
   m_TagString: Untagged
@@ -205,6 +206,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MeltDamageMultiplier: 1
+--- !u!114 &6114040138818480108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5413686579382620190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 101ba59d542244be8f51a6264c60e928, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1820871124231242427
 PrefabInstance:
   m_ObjectHideFlags: 0
