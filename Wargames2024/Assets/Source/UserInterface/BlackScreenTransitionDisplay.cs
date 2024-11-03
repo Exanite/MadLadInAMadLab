@@ -15,7 +15,9 @@ namespace Source.UserInterface
         public float DeathDuration = 3f;
         public float TeleportDuration = 1;
 
-        private float opacity = 1;
+        public bool DoInitialTransition = true;
+
+        private float opacity = 0;
 
         private Tweener current;
 
@@ -24,9 +26,12 @@ namespace Source.UserInterface
             base.OnEnable();
 
             SceneManager.sceneLoaded += OnSceneLoaded;
-            opacity = 1;
 
-            Fade(0, SceneLoadDuration).Forget();
+            if (DoInitialTransition)
+            {
+                opacity = 1;
+                Fade(0, SceneLoadDuration).Forget();
+            }
         }
 
         private void OnDisable()
@@ -43,7 +48,10 @@ namespace Source.UserInterface
 
         private void OnSceneLoaded(Scene scene, LoadSceneMode loadSceneMode)
         {
-            opacity = 1;
+            if (DoInitialTransition)
+            {
+                opacity = 1;
+            }
         }
 
         public async UniTask Fade(float newOpacity, float duration)

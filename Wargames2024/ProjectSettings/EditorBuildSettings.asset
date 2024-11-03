@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Content/Scenes/WebGlEntryHack.unity
+    guid: a0517b666c480bf4dbe38aabade83aa5
+  - enabled: 1
     path: Assets/Content/Scenes/Levels/Level1.unity
     guid: 67d4ee47085a9dc4d8145586247c746e
   - enabled: 1
