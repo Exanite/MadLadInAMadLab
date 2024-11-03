@@ -39,3 +39,5 @@ MonoBehaviour:
     SceneName: LevelSummoning
   - DisplayName: The End
     SceneName: LevelDev
+  - DisplayName: Illogical Gates
+    SceneName: LevelIllogicalGates
