@@ -22,7 +22,7 @@ MonoBehaviour:
   - SceneName: Level3
     DisplayName: Crate Your Own Path
   - SceneName: LevelPressurePlatesAndDoors
-    DisplayName: Everything in the Right Plate
+    DisplayName: Everything on Plate
   - SceneName: LevelSummoning
     DisplayName: The Power of Summoning
   - SceneName: LevelBarrellingAlley
