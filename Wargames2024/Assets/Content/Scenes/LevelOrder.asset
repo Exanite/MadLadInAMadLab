@@ -25,5 +25,7 @@ MonoBehaviour:
     DisplayName: Pressure Plates
   - SceneName: LevelSummoning
     DisplayName: The Power of Summoning
+  - SceneName: LevelBarrellingAlley
+    DisplayName: Barrelling Alley
   - SceneName: LevelDev
     DisplayName: The End
