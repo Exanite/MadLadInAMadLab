@@ -18,4 +18,4 @@ MonoBehaviour:
   - SceneName: Level2
     DisplayName: The Crate Escape
   - SceneName: MainTestingScene
-    DisplayName: Debug Level
+    DisplayName: The End
