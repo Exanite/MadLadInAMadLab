@@ -21,5 +21,9 @@ MonoBehaviour:
     DisplayName: The Crate Escape
   - SceneName: Level3
     DisplayName: Crate Your Own Path
+  - SceneName: LevelTwoPressurePlates
+    DisplayName: Pressure Plates
+  - SceneName: LevelSummoning
+    DisplayName: The Power of Summoning
   - SceneName: LevelDev
     DisplayName: The End
