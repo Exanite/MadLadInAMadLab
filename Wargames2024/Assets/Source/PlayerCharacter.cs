@@ -1,5 +1,9 @@
+using System;
+using Cysharp.Threading.Tasks;
+using Source.UserInterface;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PlayerCharacter : MonoBehaviour
 {
@@ -52,5 +56,18 @@ public class PlayerCharacter : MonoBehaviour
             frame = 0;
         }
         SpriteRenderer.sprite = Animation[(int) frame];
+    }
+
+    private void OnDestroy()
+    {
+        if (!gameObject.scene.isLoaded)
+        {
+            return;
+        }
+
+        BlackScreenTransitionDisplay.Instance.Fade(1, BlackScreenTransitionDisplay.Instance.DeathDuration).ContinueWith(() =>
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex, LoadSceneMode.Single);
+        }).Forget();
     }
 }
