@@ -25,6 +25,8 @@ MonoBehaviour:
     DisplayName: Everything in the Right Plate
   - SceneName: LevelBarrellyMakingItThere
     DisplayName: Barrelly Making It There
+  - SceneName: LevelLiveWires
+    DisplayName: Hot Cross Wires
   - SceneName: LevelSummoning
     DisplayName: The Power of Summoning
   - SceneName: LevelBarrellingAlley
