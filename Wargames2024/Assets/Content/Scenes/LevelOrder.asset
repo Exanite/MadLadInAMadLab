@@ -33,6 +33,8 @@ MonoBehaviour:
     SceneName: LevelMassProduction
   - DisplayName: Barrelly Making It There
     SceneName: LevelBarrellyMakingItThere
+  - DisplayName: Illogical Gates
+    SceneName: LevelIllogicalGates
   - DisplayName: Barrelling Alley
     SceneName: LevelBarrellingAlley
   - DisplayName: Hot Cross Wires
