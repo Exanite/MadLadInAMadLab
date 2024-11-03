@@ -21,6 +21,8 @@ MonoBehaviour:
     DisplayName: The Crate Escape
   - SceneName: Level3
     DisplayName: Crate Your Own Path
+  - SceneName: LevelBarrellyHoldingOn
+    DisplayName: Barrelly Holding On
   - SceneName: LevelPressurePlatesAndDoors
     DisplayName: Everything in the Right Plate
   - SceneName: LevelBarrellyMakingItThere
