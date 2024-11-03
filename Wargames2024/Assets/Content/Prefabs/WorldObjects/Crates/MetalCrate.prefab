@@ -101,7 +101,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 10
+  m_Mass: 50
   m_LinearDrag: 10
   m_AngularDrag: 100
   m_GravityScale: 1
@@ -190,6 +190,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0834b0748bbf1fd4a94683f2fe334f97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  FireResistRadius: 1
 --- !u!1001 &567221050483194087
 PrefabInstance:
   m_ObjectHideFlags: 0
