@@ -23,6 +23,8 @@ MonoBehaviour:
     DisplayName: Crate Your Own Path
   - SceneName: LevelBarrellyHoldingOn
     DisplayName: Barrelly Holding On
+  - SceneName: LevelIntoTheFire
+    DisplayName: IntoTheFire
   - SceneName: LevelPressurePlatesAndDoors
     DisplayName: Everything in the Right Plate
   - SceneName: LevelBarrellyMakingItThere
