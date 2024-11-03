@@ -109,24 +109,15 @@ public class FireBehaviour : MonoBehaviour
         Physics2D.OverlapCircle(transform.position, BurnRadius * 2, default, results);
         foreach (var result in results) {
             if (result.attachedRigidbody && result.attachedRigidbody.TryGetComponent(out BurnableObject burnableObject) && result.attachedRigidbody.TryGetComponent(out EntityHealth entityHealth)) {
-                TrySpreadAt(result.attachedRigidbody.transform.position/* - new UnityEngine.Vector3(0.5f,0.5f)*/, 10);
+                SpreadAt(result.attachedRigidbody.transform.position);
             }
         }
     }
 
-    private void TrySpreadAt(UnityEngine.Vector3 position, int fires) {
-        for (var i = 0; i < fires; i++) {
-            var spreadRange = Random.Range(0, 2);
-            var spreadPosition = position + (UnityEngine.Vector3)(Random.insideUnitCircle.normalized * spreadRange);
-
-            /*if (Physics2D.OverlapCircle(spreadPosition, SpreadCheckRadius))  {
-                continue;
-            }*/
-
-            Instantiate(GameContext.Instance.FirePrefab, spreadPosition, UnityEngine.Quaternion.identity);
-            
-            break;
-        }
+    private void SpreadAt(UnityEngine.Vector3 position) {
+        var spreadRange = Random.Range(0, 2);
+        var spreadPosition = position + (UnityEngine.Vector3)(Random.insideUnitCircle.normalized * spreadRange);
+        Instantiate(GameContext.Instance.FirePrefab, spreadPosition, UnityEngine.Quaternion.identity);
     }
     private void UpdateSpreadTime() {
         nextSpreadTime = Random.Range(MinSpreadTime, MaxSpreadTime);
