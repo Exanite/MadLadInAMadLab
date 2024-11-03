@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Exanite.Core.Utilities;
 using UnityEngine;
 
 public class WireNetwork : MonoBehaviour
@@ -42,6 +43,7 @@ public class WireNetwork : MonoBehaviour
 
     public List<WireNetwork> NetworksToActivate = new();
 
+    private bool wasFullyOn;
     public bool IsFullyOn
     {
         get
@@ -55,6 +57,8 @@ public class WireNetwork : MonoBehaviour
             return result;
         }
     }
+
+    public event Action Activated;
 
     private void Update()
     {
@@ -72,5 +76,13 @@ public class WireNetwork : MonoBehaviour
                 network.EnergySources.Remove(gameObject);
             }
         }
+
+        if (wasFullyOn != IsFullyOn && IsFullyOn)
+        {
+            "Network activated".Dump();
+            Activated?.Invoke();
+        }
+
+        wasFullyOn = IsFullyOn;
     }
 }

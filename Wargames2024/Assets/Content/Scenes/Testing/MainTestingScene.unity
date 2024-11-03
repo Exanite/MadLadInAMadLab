@@ -35402,6 +35402,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8801599644435248375, guid: 3d2013c8baf5f6844a7994d170b8efbf, type: 3}
+      propertyPath: Prefab
+      value: 
+      objectReference: {fileID: 8020525558177558638, guid: 302296b9d12ac0943810ffb4aa09dc1b, type: 3}
+    - target: {fileID: 8801599644435248375, guid: 3d2013c8baf5f6844a7994d170b8efbf, type: 3}
       propertyPath: Network
       value: 
       objectReference: {fileID: 1593722672}
