@@ -19,5 +19,7 @@ MonoBehaviour:
     DisplayName: Tutorial
   - SceneName: Level2
     DisplayName: The Crate Escape
+  - SceneName: Level3
+    DisplayName: Crate Your Own Path
   - SceneName: LevelDev
     DisplayName: The End
