@@ -26,7 +26,7 @@ MonoBehaviour:
   - SceneName: LevelBarrellyMakingItThere
     DisplayName: Barrelly Making It There
   - SceneName: LevelSummoning
-    DisplayName: The Power of Summoning
+    DisplayName: The 'Power' of Summoning
   - SceneName: LevelBarrellingAlley
     DisplayName: Barrelling Alley
   - SceneName: LevelDev
