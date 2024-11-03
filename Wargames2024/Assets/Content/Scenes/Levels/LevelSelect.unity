@@ -634,7 +634,7 @@ PrefabInstance:
       objectReference: {fileID: 291998444}
     - target: {fileID: 4187460766405595154, guid: 2cf6485e7b685d74bbd351bbb72760bc, type: 3}
       propertyPath: EndWallOffset
-      value: -5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4187460766405595154, guid: 2cf6485e7b685d74bbd351bbb72760bc, type: 3}
       propertyPath: FirstTeleporterPosition
