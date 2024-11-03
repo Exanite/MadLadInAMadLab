@@ -12,51 +12,28 @@ public class WireNetwork : MonoBehaviour
     public int Threshold = 1;
     public bool Invert = false;
 
-    private int PowerLevel => EnergySources.Count;
-    private int MaxPowerLevel => Threshold;
-    private float Proportion
+    private int RawMaxPowerLevel => Threshold;
+    private int RawPowerLevel => Mathf.Clamp(EnergySources.Count, 0, RawMaxPowerLevel);
+    private float RawProportion
     {
         get
         {
-            if (MaxPowerLevel == 0)
-            {
-                return 0;
-            }
-
-            return Mathf.Clamp01((float)PowerLevel / MaxPowerLevel);
-        }
-    }
-
-    public bool HasPartialPower => PartialPower != 0;
-    public float PartialPower
-    {
-        get
-        {
-            if (MaxPowerLevel == 0)
+            if (RawMaxPowerLevel == 0)
             {
                 return 1;
             }
 
-            return Invert ? (1 - Proportion) : Proportion;
+            return Mathf.Clamp01((float)RawPowerLevel / RawMaxPowerLevel);
         }
     }
+
+    public bool HasPartialPower => PartialPower != 0;
+    public float PartialPower => Invert ? 1 - RawProportion : RawProportion;
 
     public List<WireNetwork> NetworksToActivate = new();
 
     private bool wasFullyOn;
-    public bool IsFullyOn
-    {
-        get
-        {
-            var result = EnergySources.Count >= Threshold;
-            if (Invert)
-            {
-                result = !result;
-            }
-
-            return result;
-        }
-    }
+    public bool IsFullyOn => Mathf.Approximately(PartialPower, 1);
 
     public event Action Activated;
 
