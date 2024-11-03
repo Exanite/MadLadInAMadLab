@@ -144,14 +144,14 @@
 	</object>
 	<object class="CompressorEffect" id="{20254026-9dd3-4932-80db-98eb349cfb91}" />
 	<object class="SpatialiserEffect" id="{9b1a41ee-8b0a-4490-a90b-58088a7ef52e}">
+		<property name="distanceRolloffType">
+			<value>2</value>
+		</property>
 		<property name="minimumDistance">
 			<value>0</value>
 		</property>
 		<property name="maximumDistance">
 			<value>65</value>
-		</property>
-		<property name="overrideRange">
-			<value>true</value>
 		</property>
 		<property name="extentMode">
 			<value>1</value>
