@@ -23,5 +23,6 @@ public class LevelTeleporter : MonoBehaviour
         }
 
         Text.text = $"Level {levelIndex}\n{levelInfo.DisplayName}";
+        Teleporter.scene = levelInfo.SceneName;
     }
 }

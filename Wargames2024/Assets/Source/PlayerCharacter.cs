@@ -26,9 +26,12 @@ public class PlayerCharacter : MonoBehaviour
     private GameContext gameContext;
     private float frame = 0;
 
+    private static bool IsTransitioning = false;
+
     private void OnEnable() {
         gameContext = GameContext.Instance;
         gameContext.Player = this;
+        IsTransitioning = false;
     }
 
     private void OnDisable() {
@@ -61,34 +64,46 @@ public class PlayerCharacter : MonoBehaviour
             if (statusEffects[i,0] <= 0) {
                 statusEffects[i,0] = 0;
                 if (i == 0) {
-                    GameContext.Instance.regenIcon.enabled = false;
+                    UiContext.Instance.regenIcon.enabled = false;
                 } else if (i == 1) {
-                    GameContext.Instance.resistIcon.enabled = false;
+                    UiContext.Instance.resistIcon.enabled = false;
                 }
             } else if (statusEffects[i,0] > 0) {
                 statusEffects[i,0] -= Time.deltaTime;
                 if (i == 0) {
-                    GameContext.Instance.regenIcon.enabled = true;
+                    UiContext.Instance.regenIcon.enabled = true;
                     Health.Health += statusEffects[i,1] * Time.deltaTime;
                 } else if (i == 1) {
-                    GameContext.Instance.resistIcon.enabled = true;
+                    UiContext.Instance.resistIcon.enabled = true;
                 }
             }
         }
         if (Input.GetKey(KeyCode.LeftControl) && Input.GetKey(KeyCode.LeftShift) && Input.GetKeyDown(KeyCode.R))
         {
-            BlackScreenTransitionDisplay.Instance.Fade(1, BlackScreenTransitionDisplay.Instance.DeathDuration).ContinueWith(() =>
+            if (!IsTransitioning)
             {
-                SceneManager.LoadScene("LevelSelect", LoadSceneMode.Single);
-            }).Forget();
+                BlackScreenTransitionDisplay.Instance.Fade(1, BlackScreenTransitionDisplay.Instance.DeathDuration).ContinueWith(() =>
+                {
+                    SceneManager.LoadScene("LevelSelect", LoadSceneMode.Single);
+                    IsTransitioning = false;
+                }).Forget();
+            }
+
+            IsTransitioning = true;
         }
         else
         if (Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.R))
         {
-            BlackScreenTransitionDisplay.Instance.Fade(1, BlackScreenTransitionDisplay.Instance.DeathDuration).ContinueWith(() =>
+            if (!IsTransitioning)
             {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex, LoadSceneMode.Single);
-            }).Forget();
+                BlackScreenTransitionDisplay.Instance.Fade(1, BlackScreenTransitionDisplay.Instance.DeathDuration).ContinueWith(() =>
+                {
+                    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex, LoadSceneMode.Single);
+                    IsTransitioning = false;
+                }).Forget();
+            }
+
+            IsTransitioning = true;
         }
     }
 
