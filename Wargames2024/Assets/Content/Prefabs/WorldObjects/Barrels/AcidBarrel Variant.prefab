@@ -86,6 +86,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Rigidbody: {fileID: 4648030091001120146}
+  threshold: 500
 --- !u!50 &4648030091001120146 stripped
 Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 1739623586179359842, guid: 1c6327df0574a3b498b5d12b28cca44c, type: 3}
